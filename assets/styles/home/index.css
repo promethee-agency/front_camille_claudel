@@ -1,0 +1,88 @@
+section h2 {
+    font-family: 'Mazius', serif;
+    font-style: italic;
+    color: var(--primary-950);
+}
+
+/* SEASONS SECTION */
+section.seasons {
+    padding: var(--glutter-normal) 6rem;
+}
+
+section.seasons h2 {
+    margin-bottom: 2.5rem;
+    font-size: var(--text-5xl);
+}
+
+section.seasons .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+section.seasons .cards > div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 1rem;
+    overflow: hidden;
+    border-radius: .5rem;
+}
+
+section.seasons .cards > div img {
+    aspect-ratio: 14 / 9;
+}
+
+section.seasons .cards > div h3 {
+    font-family: 'Mazius', serif;
+    font-style: italic;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+section.seasons .cards > div p {
+    max-width: 12rem;
+    margin: auto 1rem;
+    color: var(--base-0);
+}
+
+section.seasons .cards .winter {
+    background-color: var(--winter-800);
+    border: solid .125rem var(--winter-950);
+    color: var(--winter-50);
+}
+
+section.seasons .cards .winter h3 {
+    color: var(--winter-50);
+}
+
+section.seasons .cards .spring {
+    background-color: var(--spring-800);
+    border: solid .125rem var(--spring-950);
+    color: var(--spring-50);
+}
+
+section.seasons .cards .spring h3 {
+    color: var(--spring-50);
+}
+
+section.seasons .cards .summer {
+    background-color: var(--summer-800);
+    border: solid .125rem var(--summer-950);
+    color: var(--summer-50);
+}
+
+section.seasons .cards .spring h3 {
+    color: var(--spring-50);
+}
+
+section.seasons .cards .autumn {
+    background-color: var(--autumn-800);
+    border: solid .125rem var(--autumn-950);
+    color: var(--autumn-50);
+}
+
+section.seasons .cards .autumn h3 {
+    color: var(--autumn-50);
+}

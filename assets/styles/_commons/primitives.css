@@ -1,0 +1,77 @@
+:root {
+    /* COLORS */
+
+    /* base */
+    --base-0: #ffffff;
+    --base-50: #fffbf0;
+    --base-950: #040618;
+
+    /*  winter */
+    --winter-50: #f1f7fe;
+    --winter-100: #e2eefc;
+    --winter-200: #bddcfa;
+    --winter-300: #83c0f6;
+    --winter-400: #42a0ee;
+    --winter-500: #1984de;
+    --winter-600: #0c67bd;
+    --winter-700: #0b5299;
+    --winter-800: #0d467f;
+    --winter-900: #113c69;
+    --winter-950: #0b2546;
+
+    /*  spring */
+    --spring-50: #fff1f3;
+    --spring-100: #ffe4e8;
+    --spring-200: #fecdd7;
+    --spring-300: #fda4b7;
+    --spring-400: #fc7091;
+    --spring-500: #f53e6e;
+    --spring-600: #e21c59;
+    --spring-700: #bf114c;
+    --spring-800: #a01146;
+    --spring-900: #891242;
+    --spring-950: #4c051f;
+
+    /*  summer */
+    --summer-50: #ebfef4;
+    --summer-100: #cefde3;
+    --summer-200: #a2f8cd;
+    --summer-300: #66efb4;
+    --summer-400: #29de96;
+    --summer-500: #04be7a;
+    --summer-600: #00a068;
+    --summer-700: #008057;
+    --summer-800: #006546;
+    --summer-900: #01533a;
+    --summer-950: #002f22;
+
+     /*  autumn */
+    --autumn-50: #fdf6ef;
+    --autumn-100: #fae9da;
+    --autumn-200: #f4d1b4;
+    --autumn-300: #edb284;
+    --autumn-400: #e48853;
+    --autumn-500: #de6a31;
+    --autumn-600: #d05226;
+    --autumn-700: #ac3f22;
+    --autumn-800: #8a3422;
+    --autumn-900: #6f2d1f;
+    --autumn-950: #3c140e;
+
+
+    /* FONTS */
+
+    /* sizes */
+    --text-base: 1rem; /* p */
+    --text-lg: 1.125rem; /* h6 */
+    --text-xl: 1.25rem; /* h5 */
+    --text-2xl: 1.5rem; /* h4 */
+    --text-3xl: 1.875rem; /* h3 */
+    --text-4xl: 2.25rem; /* h2 */
+    --text-5xl: 3rem; /* h1 */
+
+    /* PADDINGS */
+
+    /* glutter */
+    --glutter-normal: 5rem;
+} 
