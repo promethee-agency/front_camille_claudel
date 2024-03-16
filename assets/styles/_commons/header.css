@@ -49,3 +49,7 @@ body .container > header nav a.ticket {
     border-radius: 100rem;
     background-color: var(--primary-600);
 }
+
+body .container > header nav li.logo img {
+    aspect-ratio: 1 / 1;
+}

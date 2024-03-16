@@ -279,14 +279,17 @@ section.seasons .cards > div h3 {
     margin: 1rem 0;
 }
 
-section.seasons .cards > div p {
+section.seasons .cards > div > div {
     padding: 1rem;
     border: solid .125rem var(--base-950);
     color: var(--base-950);
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-section.seasons .cards .winter p {
+section.seasons .cards .winter div {
     background-color: var(--winter-200);
 }
 
@@ -294,7 +297,7 @@ section.seasons .cards .winter h3 {
     color: var(--winter-900);
 }
 
-section.seasons .cards .spring p {
+section.seasons .cards .spring div {
     background-color: var(--spring-200);
 }
 
@@ -302,7 +305,7 @@ section.seasons .cards .spring h3 {
     color: var(--spring-900);
 }
 
-section.seasons .cards .summer p {
+section.seasons .cards .summer div {
     background-color: var(--summer-200);
 }
 
@@ -310,7 +313,7 @@ section.seasons .cards .summer h3 {
     color: var(--summer-900);
 }
 
-section.seasons .cards .autumn p {
+section.seasons .cards .autumn div {
     background-color: var(--autumn-200);
 }
 
@@ -378,6 +381,7 @@ section.seasons .cards .autumn h3 {
     section.exhibition .right .scroll > svg {
         fill: var(--base-950);
         rotate: -90deg;
+        aspect-ratio: 3 / 4;
     }
     
     section.exhibition .right .scroll > p {
