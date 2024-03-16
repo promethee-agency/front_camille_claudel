@@ -3,6 +3,7 @@ body .container > header {
     top: 1.5rem;
     left: 0;
     right: 0;
+    z-index: 9999;
 }
 
 body .container > header nav {
