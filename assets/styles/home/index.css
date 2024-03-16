@@ -2,11 +2,11 @@ section h2 {
     font-family: 'Mazius', serif;
     font-style: italic;
     color: var(--primary-950);
-    /* font-size: var(--text-5xl); */
+    font-weight: normal;
 }
 
 section span.alternative-font {
-    font-family: 'mazius';
+    font-family: 'Mazius';
     font-style: italic;
     font-weight: normal;
 }
@@ -152,7 +152,8 @@ section.exhibition .left > a {
     color: var(--base-0);
     border-radius: 100rem;
     background-color: var(--primary-600);
-    transition: all ease 0.2s;
+    transition: ease-out .2s;
+    transition-property: background-color;
 }
 
 section.exhibition .left > a:hover {
@@ -185,13 +186,15 @@ section.exhibition .right .cards > div {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: all ease 0.3s;
+    transition: ease-out .3s;
+    filter: saturate(0);
+    transition-property: filter;
     position: relative;
 }
 
 section.exhibition .right .cards > div > h3 {
     color: var(--base-0);
-    font-family: 'mazius';
+    font-family: 'Mazius';
     font-style: italic;
     font-weight: normal;
     position: absolute;
@@ -199,9 +202,18 @@ section.exhibition .right .cards > div > h3 {
     right: 0;
     padding-bottom: 1rem;
     padding-right: 1rem;
-    display: none;
-    transition: all ease 0.3s;
+    opacity: 0;
+    transition: ease-out .3s;
+    transition-property: opacity;
     text-transform: uppercase;
+}
+
+section.exhibition .right .cards div:hover {
+    filter: initial;
+}
+
+section.exhibition .right .cards div:hover h3 {
+    opacity: 1;
 }
 
 section.exhibition .right .cards .winter {
@@ -209,25 +221,9 @@ section.exhibition .right .cards .winter {
     grid-area: winter;
 }
 
-section.exhibition .right .cards .winter:hover {
-    background-image: url(../../images/home/index/card_winter_color.webp);
-}
-
-section.exhibition .right .cards .winter:hover h3 {
-    display: block;
-}
-
 section.exhibition .right .cards .spring {
     background-image: url(../../images/home/index/card_spring.webp);
     grid-area: spring;
-}
-
-section.exhibition .right .cards .spring:hover {
-    background-image: url(../../images/home/index/card_spring_color.webp);
-}
-
-section.exhibition .right .cards .spring:hover h3 {
-    display: block;
 }
 
 section.exhibition .right .cards .summer {
@@ -235,25 +231,9 @@ section.exhibition .right .cards .summer {
     grid-area: summer;
 }
 
-section.exhibition .right .cards .summer:hover {
-    background-image: url(../../images/home/index/card_summer_color.webp);
-}
-
-section.exhibition .right .cards .summer:hover h3 {
-    display: block;
-}
-
 section.exhibition .right .cards .autumn {
     background-image: url(../../images/home/index/card_autumn.webp);
     grid-area: autumn;
-}
-
-section.exhibition .right .cards .autumn:hover {
-    background-image: url(../../images/home/index/card_autumn_color.webp);
-}
-
-section.exhibition .right .cards .autumn:hover h3 {
-    display: block;
 }
 
 section.exhibition .right .scroll {
@@ -271,7 +251,6 @@ section.seasons h2 {
 
 section.seasons .cards {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
     gap: 2rem;
@@ -281,67 +260,63 @@ section.seasons .cards > div {
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-bottom: 1rem;
-    overflow: hidden;
-    border-radius: .5rem;
-    max-width: 13rem;
+    padding: 1.5rem;
+    border: solid .125rem var(--base-950);
+    flex-basis: 0;
+    flex-grow: 1;
 }
 
 section.seasons .cards > div img {
     aspect-ratio: 14 / 9;
+    width: 100%;
     object-fit: cover;
 }
 
 section.seasons .cards > div h3 {
     font-family: 'Mazius', serif;
     font-style: italic;
+    font-weight: normal;
     text-align: center;
-    transform: translateY(-50%);
+    margin: 1rem 0;
 }
 
 section.seasons .cards > div p {
-    margin: auto 1rem;
-    color: var(--base-0);
+    padding: 1rem;
+    border: solid .125rem var(--base-950);
+    color: var(--base-950);
+    height: 100%;
 }
 
-section.seasons .cards .winter {
-    background-color: var(--winter-800);
-    border: solid .125rem var(--winter-950);
-    color: var(--winter-50);
+section.seasons .cards .winter p {
+    background-color: var(--winter-200);
 }
 
 section.seasons .cards .winter h3 {
-    color: var(--winter-50);
+    color: var(--winter-900);
 }
 
-section.seasons .cards .spring {
-    background-color: var(--spring-800);
-    border: solid .125rem var(--spring-950);
-    color: var(--spring-50);
-}
-
-section.seasons .cards .spring h3 {
-    color: var(--spring-50);
-}
-
-section.seasons .cards .summer {
-    background-color: var(--summer-800);
-    border: solid .125rem var(--summer-950);
-    color: var(--summer-50);
+section.seasons .cards .spring p {
+    background-color: var(--spring-200);
 }
 
 section.seasons .cards .spring h3 {
-    color: var(--spring-50);
+    color: var(--spring-900);
 }
 
-section.seasons .cards .autumn {
-    background-color: var(--autumn-800);
-    border: solid .125rem var(--autumn-950);
-    color: var(--autumn-50);
+section.seasons .cards .summer p {
+    background-color: var(--summer-200);
+}
+
+section.seasons .cards .summer h3 {
+    color: var(--summer-900);
+}
+
+section.seasons .cards .autumn p {
+    background-color: var(--autumn-200);
 }
 
 section.seasons .cards .autumn h3 {
-    color: var(--autumn-50);
+    color: var(--autumn-900);
 }
 
 
@@ -410,5 +385,4 @@ section.seasons .cards .autumn h3 {
         writing-mode: vertical-rl;
         text-orientation: mixed;
     }
-    
 }
