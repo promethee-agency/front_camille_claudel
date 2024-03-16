@@ -21,13 +21,13 @@ section.top , section.top .bg-sculpture {
 }
 
 section.top {
-    background-image: url(../../images/home/index/bg-top-grey.webp);
+    background-image: url("../../images/home/index/bg-top-grey.webp");
     position: relative;
     z-index: -1;
 }
 
 section.top .bg-sculpture {
-    background-image: url(../../images/home/index/bg-top-spring.webp);
+    background-image: url("../../images/home/index/bg-top-spring.webp");
 }
 
 section.top .title {
@@ -217,22 +217,22 @@ section.exhibition .right .cards div:hover h3 {
 }
 
 section.exhibition .right .cards .winter {
-    background-image: url(../../images/home/index/card_winter.webp);
+    background-image: url("../../images/home/index/card_winter.webp");
     grid-area: winter;
 }
 
 section.exhibition .right .cards .spring {
-    background-image: url(../../images/home/index/card_spring.webp);
+    background-image: url("../../images/home/index/card_spring.webp");
     grid-area: spring;
 }
 
 section.exhibition .right .cards .summer {
-    background-image: url(../../images/home/index/card_summer.webp);
+    background-image: url("../../images/home/index/card_summer.webp");
     grid-area: summer;
 }
 
 section.exhibition .right .cards .autumn {
-    background-image: url(../../images/home/index/card_autumn.webp);
+    background-image: url("../../images/home/index/card_autumn.webp");
     grid-area: autumn;
 }
 
@@ -250,10 +250,9 @@ section.seasons h2 {
 }
 
 section.seasons .cards {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
     gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }
 
 section.seasons .cards > div {
