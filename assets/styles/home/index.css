@@ -19,6 +19,7 @@ section.seasons .cards {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
+    gap: 2rem;
 }
 
 section.seasons .cards > div {
@@ -28,10 +29,12 @@ section.seasons .cards > div {
     padding-bottom: 1rem;
     overflow: hidden;
     border-radius: .5rem;
+    max-width: 13rem;
 }
 
 section.seasons .cards > div img {
     aspect-ratio: 14 / 9;
+    object-fit: cover;
 }
 
 section.seasons .cards > div h3 {
@@ -42,7 +45,6 @@ section.seasons .cards > div h3 {
 }
 
 section.seasons .cards > div p {
-    max-width: 12rem;
     margin: auto 1rem;
     color: var(--base-0);
 }
