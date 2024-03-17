@@ -97,6 +97,7 @@ section.top .scroll-down > p {
 /* MOTION SECTION */
 section.motion video {
     width: 100%;
+    aspect-ratio: 16 / 9;
 }
 
 /* EXHIBITION SECTION */
