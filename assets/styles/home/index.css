@@ -250,9 +250,227 @@ section.exhibition .right .scroll {
     display: none;
 }
 
+/* CONCEPT SECTION */
+section.concept {
+    background-color: var(--base-950);
+    padding: 5rem 3rem;
+    z-index: -1;
+}
+
+section.concept .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    border-bottom: solid .25rem var(--base-0);
+}
+
+section.concept .container h2 {
+    color: var(--primary-50);
+    font-family: 'satoshi';
+}
+
+section.concept .container h2 span.alternative-font {
+    color: var(--primary-400);
+}
+
+section.concept .container .title {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+}
+
+section.concept .container .title .line {
+    flex: 1;
+    height: .25rem;
+    background-color: var(--base-0);
+}
+
+
+section.concept .container .details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+section.concept .container .details .infos h3{
+    color: var(--primary-50);
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: .5rem;
+}
+
+section.concept .container .details .infos {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    color: var(--base-0);
+}
+
+section.concept .container .details .infos .price table {
+    table-layout: fixed;
+    width:80%;
+}
+
+section.concept .container .details .infos .price tbody tr {
+    border-bottom: solid 1px var(--base-0);
+}
+
+section.concept .container .details .infos .price th {
+    text-align: left;
+    padding: .5rem 0rem;
+}
+
+section.concept .container .details .infos .price td {
+    text-align: right;
+}
+
+section.concept .container .details .image {
+    margin: auto;
+}
+
+/* COUNTDOWN SECTION */
+section.countdown {
+    padding: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+section.countdown h2 {
+    font-family: 'Satoshi';
+    font-style: italic;
+}
+
+section.countdown .counter {
+    display: flex;
+    gap: 1.5rem;
+}
+
+section.countdown .counter .unit {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    align-items: center;
+}
+
+section.countdown .counter .unit .number {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-950);
+}
+
+/* ARTIST SECTION */
+section.artist {
+    display: flex;
+    /* height: 80svh; */
+}
+
+section.artist .right {
+    width: 55%;
+    background-color: var(--base-950);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem 3rem;
+}
+
+section.artist .right .title {
+    width: 100%;
+}
+
+section.artist .right .title h3 {
+    color: var(--primary-50);
+    font-family: 'Mazius';
+    font-weight: normal;
+    font-style: italic;
+    font-size:5rem;
+}
+
+section.artist .right .title h3.name {
+    text-align: right;
+}
+
+section.artist .right .title h3 span.alternative-color {
+    color: var(--primary-400);
+    text-align: left;
+    
+}
+
+section.artist .right p {
+    color:var(--base-0);
+    line-height: 1.3;
+    font-size: var(--text-base);
+}
+
+section.artist .left {
+    width: 45%;
+    position: relative;
+    padding: 2rem 0rem;
+}
+
+section.artist .left h2 {
+    font-family: 'Satoshi';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: right;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+section.artist .left .camille img {
+    width: 16rem;
+}
+
+section.artist .left .camille {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 70%;
+    margin: auto;
+}
+
+section.artist .left .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+section.artist .left .bg > p {
+    font-size: 7rem;
+    font-weight: 500;
+    color: var(--primary-200);
+    opacity: 0.3;
+    position: absolute;
+    z-index: -1;
+}
+
+section.artist .left .bg > p.strength {
+    bottom: 2rem;
+    left: -1.5rem;
+}
+
+section.artist .left .bg > p.sensivity {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    bottom: -1rem;
+    right: -1.5rem;
+}
+
+
+
+
 /* SEASONS SECTION */
 section.seasons {
-    padding: 6rem var(--glutter-normal);
+    padding: 6rem 3rem;
 }
 
 section.seasons h2 {
@@ -336,8 +554,37 @@ section.seasons .cards .autumn h3 {
 
 /* above 640px */
 @media (min-width: 40rem) {
+    section.exhibition {
+        padding: 0 var(--glutter-normal);
+    }
+
     section.exhibition .right .cards > div > h3 {
         font-size: var(--text-4xl);
+    }
+
+    section.concept .container .details .image {
+        margin: inherit;
+        margin-left: auto;
+    }
+
+    section.concept {
+        padding: 5rem var(--glutter-normal);
+    }
+
+    section.concept .container .details .infos .price table {
+        width:20rem;
+    }
+
+    section.countdown .counter {
+        gap: 4rem;
+    }
+
+    section.countdown .counter .unit .number {
+        font-size: 4rem;
+    }
+
+    section.seasons {
+        padding: 6rem var(--glutter-normal);
     }
 }
 
@@ -357,7 +604,6 @@ section.seasons .cards .autumn h3 {
         flex-direction: row;
         justify-content: space-between;
         gap: 3rem;
-        padding: 0 var(--glutter-normal);
     }
     
     section.exhibition .left {
@@ -400,5 +646,34 @@ section.seasons .cards .autumn h3 {
     section.exhibition .right .scroll > p {
         writing-mode: vertical-rl;
         text-orientation: mixed;
+    }
+
+    section.concept .container .details {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 2.5rem;
+        gap: inherit;
+    }
+
+    section.countdown .counter .unit .number {
+        font-size: 6rem;
+    }
+
+    section.artist .right .title h3 {
+        font-size:6rem;
+    }
+
+    section.artist .right p {
+        font-size: var(--text-lg);
+    }
+
+    section.artist .right {
+        padding-left: var(--glutter-normal);
+        padding-right: var(--glutter-normal);
+    }
+
+    section.artist .left .camille img {
+        width: 20rem;
     }
 }
