@@ -104,9 +104,18 @@ section.exhibition {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0rem 3rem 2rem 3rem;
+    padding: 0 3rem;
     position: relative;
-    margin-top: 2rem;
+    margin: 2rem 0;
+}
+
+section.exhibition .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 section.exhibition .bg > p {
@@ -162,7 +171,7 @@ section.exhibition .left > a:hover {
 
 section.exhibition .right {
     display: flex;
-    /* margin: auto; */
+    position: relative;
     padding-top: 3rem;
 }
 
@@ -347,7 +356,7 @@ section.seasons .cards .autumn h3 {
         flex-direction: row;
         justify-content: space-between;
         gap: 3rem;
-        padding: 0rem 3rem 2rem var(--glutter-normal);
+        padding: 0 var(--glutter-normal);
     }
     
     section.exhibition .left {
@@ -375,7 +384,10 @@ section.seasons .cards .autumn h3 {
         justify-content: flex-end;
         align-items: center;
         gap: 1rem;
-        padding: 0rem 0rem 1rem 1rem;
+        position: absolute;
+        right: calc(var(--glutter-normal) * -0.5);
+        bottom: 0;
+        transform: translateX(50%);
     }
     
     section.exhibition .right .scroll > svg {
