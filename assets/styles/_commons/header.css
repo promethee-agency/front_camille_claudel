@@ -19,7 +19,6 @@ body .container > header nav ul {
     background-color: var(--base-0);
     padding: .75rem 1.5rem;
     border-radius: 100rem;
-    border: solid .125rem var(--primary-50);
 }
 
 body .container > header nav a {
@@ -49,8 +48,4 @@ body .container > header nav a.ticket {
     color: var(--base-0);
     border-radius: 100rem;
     background-color: var(--primary-600);
-}
-
-body .container > header nav li.logo img {
-    aspect-ratio: 1 / 1;
 }
