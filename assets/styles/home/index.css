@@ -365,11 +365,11 @@ section.countdown .counter .unit .number {
 /* ARTIST SECTION */
 section.artist {
     display: flex;
-    /* height: 80svh; */
+    flex-direction: column;
 }
 
 section.artist .right {
-    width: 55%;
+    width: 100%;
     background-color: var(--base-950);
     display: flex;
     flex-direction: column;
@@ -408,7 +408,7 @@ section.artist .right p {
 }
 
 section.artist .left {
-    width: 45%;
+    width: 100%;
     position: relative;
     padding: 2rem 0rem;
 }
@@ -445,7 +445,7 @@ section.artist .left .bg {
 }
 
 section.artist .left .bg > p {
-    font-size: 7rem;
+    font-size: 5rem;
     font-weight: 500;
     color: var(--primary-200);
     opacity: 0.3;
@@ -675,5 +675,30 @@ section.seasons .cards .autumn h3 {
 
     section.artist .left .camille img {
         width: 20rem;
+    }
+
+    section.artist .left .bg > p {
+        font-size: 7rem;
+    }
+
+    section.artist {
+        display: flex;
+    }
+    
+    section.artist .right {
+        width: 55%;
+        background-color: var(--base-950);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 5rem 3rem;
+    }
+
+    section.artist .left {
+        width: 45%;
+        position: relative;
+        padding: 2rem 0rem;
     }
 }
