@@ -1,0 +1,169 @@
+/* FIRST TITLE */
+main > div.title {
+    display: flex;
+    align-items: center;
+    margin-top: 9rem;
+    padding: 0 var(--glutter-normal);
+    gap: 1rem;
+}
+
+main .title h1 {
+    color: var(--primary-950);
+}
+
+main .title .line {
+    width: 3rem;
+    height: 0.5rem;
+    background-color: var(--primary-950);
+}
+
+
+/* SECONDARY NAVIGATION */
+main nav.stepper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 2rem var(--glutter-normal) 1.5rem var(--glutter-normal);
+    flex-wrap: wrap;
+}
+
+main nav.stepper a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-950);
+}
+
+main nav.stepper a > div.step {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px var(--primary-950);
+    border-radius: 0.3rem;
+    color: var(--primary-950);
+}
+
+main nav.stepper a p.current {
+    font-weight: bold;
+}
+
+main nav.stepper a > div.step.check {
+    color: var(--primary-50);
+}
+
+main nav.stepper a > div.step.check {
+    background-color: var(--primary-950);
+}
+
+/* FORM AND RECAP TICKET */
+.form-recap {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0rem var(--glutter-normal);
+}
+
+/* RECAP TICKET */
+.form-recap .recap .ticket {
+    border: solid 1px var(--primary-950);
+    max-width: 30rem;  /* est ce mieux 30 ou 25rem ? */
+    margin-bottom: 1.5rem;
+}
+
+.form-recap .recap .ticket h2 {
+    font-size: var(--text-2xl);
+    font-family: 'Mazius';
+    font-style: italic;
+    color: var(--primary-950);
+    padding: 1.5rem;
+}
+
+.form-recap .recap .ticket .details {
+    display: flex;
+    border-bottom: solid 2px var(--primary-950);
+    border-top: solid 1px var(--primary-950);
+} 
+
+.form-recap .recap .ticket .details .date{
+    width: 45%;
+    border-right: solid 1px var(--primary-950);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+} 
+
+.form-recap .recap .ticket .details .date h3{
+   font-size: var(--text-lg);
+   color: var(--primary-950);
+}
+
+.form-recap .recap .ticket .details .expo {
+    padding: 1rem;
+}
+
+.form-recap .recap .ticket .details .expo p{
+    color: var(--primary-950);
+}
+
+.form-recap .recap .ticket .details .expo .title{
+    padding-top: 0.5rem;
+    font-weight: bold;
+}
+
+.form-recap .recap .ticket .nb-people {
+    margin-top: 0.5rem;
+    border-top: solid 1px var(--primary-950);
+    padding: 1.5rem;
+}
+
+.form-recap .recap .ticket .nb-people table {
+    width: 100%;
+}
+
+.form-recap .recap .ticket .nb-people table th {
+    text-align: left;
+    padding: 0.5rem 0rem;
+}
+
+.form-recap .recap .ticket .nb-people table tbody th:last-child {
+    padding-bottom: 4rem;
+}
+
+.form-recap .recap .ticket .nb-people table tbody th {
+    font-weight: 400;
+}
+
+.form-recap .recap .ticket .nb-people table td {
+    text-align: right;
+}
+
+.form-recap .recap .ticket .nb-people table tfoot tr {
+    border-top: dashed 1px var(--primary-950);
+}
+
+/* SELL CONDITIONS */
+.form-recap .recap .sell-conditions{
+    max-width: 30rem;
+}
+
+.form-recap .recap .sell-conditions p{
+    line-height: 1.2;
+}
+
+.form-recap .recap .sell-conditions p span{
+    font-weight: 500;
+}
+
+/* MEDIAS QUERIES */
+
+/* above 1024px */
+@media (min-width: 64rem) {
+    .form-recap {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

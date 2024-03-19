@@ -2,6 +2,7 @@
 footer{
     border-top: solid 2px var(--primary-950);
     padding: 3rem var(--glutter-normal);
+    margin-top: 3rem;
 }
 
 footer .footer {
@@ -70,6 +71,12 @@ footer .footer .top .adress ul {
 
 footer .footer .adress ul li img {
     width: 1.5rem;
+    transition:all ease-out 0.5s;
+}
+
+footer .footer .adress ul li img:hover {
+    width: 1.5rem;
+    transform: scale(1.2);
 }
 
 footer .footer .bottom {

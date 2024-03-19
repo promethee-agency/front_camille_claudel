@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Store</title>
+
+        <link rel="stylesheet" href="assets/styles/_commons/reset.css">
+            <link rel="stylesheet" href="assets/styles/_commons/primitives.css">
+            <link rel="stylesheet" href="assets/styles/_commons/tokens.css">
+            <link rel="stylesheet" href="assets/styles/_commons/main.css">
+            <link rel="stylesheet" href="assets/styles/_commons/accessibility.css">
+            <link rel="stylesheet" href="assets/styles/_commons/header.css">
+            <link rel="stylesheet" href="assets/styles/_commons/footer.css">
+
+            <link rel="stylesheet" href="assets/fonts/satoshi/fonts.css">
+            <link rel="stylesheet" href="assets/fonts/mazius/fonts.css">
+
+            <link rel="stylesheet" href="assets/styles/store/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="selected" aria-curent="page">Accueil</a></li>
+                        <li><a href="#">Expo interactive</a></li>
+                        <li class="logo"><a href="#"><img src="assets/images/_commons/logos/logo.svg" alt=""><span class="sr-only">Accueil</span></a></li>
+                        <li><a href="#">L’agence</a></li>
+                        <li><a href="#" class="ticket">Billeterie</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="title">
+                    <div class="line"></div>
+                    <h1>ACHAT BILLET</h1>
+                </div>
+
+                <!-- SECONDARY NAV -->
+                <nav class="stepper" role="navigation" aria-label="Menu secondaire">
+                    <a href="">
+                        <div class="step check">&#x2713</div>
+                        <p class="current">Dates & horraires</p>
+                    </a>
+
+                    <a href="">
+                        <div class="step">2</div>
+                        <p>Nombre de billet</p>
+                    </a>
+
+                    <a href="">
+                        <div class="step">3</div>
+                        <p>Vos coordonnées</p>
+                    </a>
+                </nav>
+
+                <div class="form-recap">
+                    <form action=""><h2>Formulaire Léo</h2></form>
+
+                    <div class="recap">
+                        <div class="ticket">
+                            <h2><span class="alternative-font">Camille Claudel</span></h2>
+                            <div class="details">
+                                <div class="date">
+                                    <h3>24/03/2024</h3> <!-- LA DATE CHOISI PRECEDEMMENT -->
+                                    <h3>17h00</h3> <!-- L'HORRAIRE CHOISIE PRECEDEMMENT  -->
+                                </div>
+                                <div class="expo">
+                                   <p>Embarquez pour l'exposition</p>
+                                   <p class="title">L'âme tourmentée de Camille Claudel, la célèbre muse de Rodin.</p>
+                                </div>
+                            </div>
+
+                            <div class="nb-people">
+                                <table>
+                                    <caption class="sr-only">Récapitulatif du prix à payer selon la catégorie réservée</caption>
+                                    <thead>
+                                        <tr>
+                                          <th scope="col" class="sr-only">Catégorie d'âge</th>
+                                          <th scope="col" class="sr-only">Prix</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                          <th scope="row">-18 ans : </th>
+                                          <td>x1</td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <th scope="row">Tarif réduit : </th>
+                                            <td>6€</td>
+                                        </tr> -->
+                                        <tr>
+                                            <th scope="row">Plein tarif : </th>
+                                            <td>x3</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                          <th scope="row">Total</th>
+                                          <td>30€</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="sell-conditions">
+                            <p>Tous les champs sont obligatoires.</p><br>
+                            <p>Veuillez noter que les billets ne sont pas sujets à échange, conformément à nos conditions générales de vente. Il est à préciser que les galeries seront évacuées 15 minutes avant la fermeture de l'établissement. Pour toute question ou besoin d'assistance, n'hésitez pas à nous contacter à l'adresse suivante : <span>contact@promethee.agency</span></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                <div class="footer">
+                    <div class="top">
+                        <a href=""><img src="assets/images/home/index/black-logo.svg" alt="agence prométhée"></a>
+                        <nav>
+                            <ul>
+                                <li><a href="">Accueil</a></li>
+                                <li><a href="">Expo intéractive</a></li>
+                                <li><a href="">L'agence</a></li>
+                                <li><a href="">Billeterie</a></li>
+                            </ul>
+                        </nav>
+                        <div class="adress">
+                            <div>
+                                <p>2 rue Albert Einstein</p>
+                                <p>77420, Champs-sur-Marne</p>
+                            </div>
+                            
+                            <ul>
+                                <li><a href=""><img src="assets/images/home/index/insta.svg" alt=""></a></li>
+                                <li><a href=""><img src="assets/images/home/index/facebook.svg" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <p>Conditions générales de vente</p>
+                        <div class="line"></div>
+                        <p>Mentions légales</p>
+                        <div class="line"></div>
+                        <p>Tous droits réservés, Prométhée Agency © 2024</p>
+                    </div>
+                    
+                </div>
+            </footer>
+            
+        </div>
+
+    </body>
+</html>
