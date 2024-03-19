@@ -179,21 +179,15 @@ section.exhibition .right {
 
 section.exhibition .right .cards {
     width: 100%;
-    height: 50shv;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
+    grid-template-columns: 1fr;
     overflow-y: auto;
-    grid-template-areas: 
-    "winter ."
-    "winter spring"
-    "summer spring"
-    "summer autumn"
-    ". autumn";
 }
 
 section.exhibition .right .cards > div {
-    height: 30rem;
+    height: 20rem;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -637,7 +631,7 @@ section.questions .container {
     width: 100%;
 }
 
-section.questions .container .bloc-question button {
+section.questions .container summary {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -646,22 +640,23 @@ section.questions .container .bloc-question button {
     background-color: transparent;
     border-bottom: solid 2px var(--primary-950);
     padding: 1.5rem 0rem;
+    cursor: pointer;
 }
 
-section.questions .container .bloc-question button h4{
+section.questions .container summary h4{
     color: var(--primary-950);
     margin-left: 1rem;
     font-weight: 500;
 }
 
-section.questions .container .bloc-question button .see-more {
+section.questions .container summary .see-more {
     position: relative;
     width: 1.2rem; 
     height: 1.2rem;
     margin-right: 1.3rem;
 }
 
-section.questions .container .bloc-question button .see-more span {
+section.questions .container summary .see-more span {
     display: block;
     height: 0.125rem;
     background-color: var(--primary-950);
@@ -676,30 +671,22 @@ section.questions .container .bloc-question button .see-more span {
     transform-origin: 50% 50%;
 }
 
-section.questions .container .bloc-question button .see-more span:last-child {
+section.questions .container summary .see-more span:last-child {
     transform: rotate(90deg);
 }
 
-section.questions .container .bloc-question button .see-more.active span:last-child{
+section.questions .container details[open] .see-more span:last-child {
     display: none;
 }
 
-section.questions .container .bloc-question article.answer{
-    display: none;
-}
 
-section.questions .container .bloc-question article.answer.active{
+section.questions .container details p {
     padding: 2rem;
     display: block;
+    line-height: 1.3;
 }
 
-section.questions .container .bloc-question article.answer p{
-    line-height: 1.2;
-}
-
-
-
-
+    
 /* MEDIAS QUERIES */
 
 /* above 640px */
@@ -707,6 +694,25 @@ section.questions .container .bloc-question article.answer p{
     /* section.exhibition {
         padding: 0 var(--glutter-normal);
     } */
+
+    section.exhibition .right .cards {
+        width: 100%;
+        height: 50shv;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        overflow-y: auto;
+        grid-template-areas: 
+        "winter ."
+        "winter spring"
+        "summer spring"
+        "summer autumn"
+        ". autumn";
+    }
+
+    section.exhibition .right .cards > div {
+        height: 30rem;
+    }
 
     section.exhibition .right .cards > div > h3 {
         font-size: var(--text-4xl);

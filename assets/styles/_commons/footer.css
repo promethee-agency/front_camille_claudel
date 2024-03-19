@@ -2,35 +2,39 @@
 footer{
     border-top: solid 2px var(--primary-950);
     padding: 3rem var(--glutter-normal);
-    padding-bottom: 6rem;
-
 }
 
 footer .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+footer .footer .top {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
 }
 
-footer .footer > a img {
+footer .footer .top a img {
     width: 12rem;
 }
 
-footer .footer nav ul {
+footer .footer .top nav ul {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-footer .footer nav ul li a {
+footer .footer .top nav ul li a {
     color: var(--base-950);
     position: relative;
     height: fit-content;
     width: fit-content;
 }
 
-footer .footer nav ul li a::after {
+footer .footer .top nav ul li a::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -43,56 +47,83 @@ footer .footer nav ul li a::after {
     transition: transform 0.3s ease;
 }
 
-footer .footer nav ul li a:hover::after {
+footer .footer .top nav ul li a:hover::after {
     transition: transform 0.3s ease;
     transform: scaleX(1);
     transform-origin: bottom left
 }
 
-footer .footer .adress {
+footer .footer .top .adress {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-footer .footer .adress p {
+footer .footer .top .adress p {
     line-height: 1.7;
 }
 
-footer .footer .adress ul {
+footer .footer .top .adress ul {
     display: flex;
     gap: 1.5rem;
 }
-
 
 footer .footer .adress ul li img {
     width: 1.5rem;
 }
 
+footer .footer .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+footer .footer .bottom .line {
+    display: none;
+}
 
 /* MEDIA QUERIES */
 
 /* above 640px */
 @media (min-width: 40rem) {
     footer .footer {
+        gap: 4rem;
+    }
+
+    footer .footer .top {
     flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
     }
 
-    footer .footer nav ul {
+    footer .footer .top nav ul {
         justify-content: flex-start;
         gap: 2rem;
     }
 
-    footer .footer .adress {
+    footer .footer .top .adress {
         justify-content: space-between;
+    }
+
+    footer .footer .bottom {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    footer .footer .bottom .line {
+        display: block;
+        width: 1rem;
+        height: .05rem;
+        background-color: var(--base-950);
+        rotate: 90deg;
     }
 }
 
 /* above 768px */
 @media (min-width: 48rem) {
-    footer .footer > a img {
+    footer .footer .top a img {
         width: 15rem;
     }
 } 
