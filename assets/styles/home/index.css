@@ -108,6 +108,7 @@ section.exhibition {
     padding: 0 var(--glutter-normal);
     position: relative;
     margin: 2rem 0;
+    overflow: hidden;
 }
 
 section.exhibition .bg {
@@ -389,7 +390,7 @@ section.artist .right .title h3 {
     font-family: 'Mazius';
     font-weight: normal;
     font-style: italic;
-    font-size:5rem;
+    font-size:3rem;
 }
 
 section.artist .right .title h3.name {
@@ -412,6 +413,7 @@ section.artist .left {
     width: 100%;
     position: relative;
     padding: 2rem 0rem;
+    overflow: hidden;
 }
 
 section.artist .left h2 {
@@ -431,6 +433,7 @@ section.artist .left .camille img {
 section.artist .left .camille {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
     width: 70%;
     margin: auto;
@@ -463,10 +466,8 @@ section.artist .left .bg > p.sensivity {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     bottom: 0rem;
-    right: -1.5rem;
+    right: -1rem;
 }
-
-
 
 
 /* SEASONS SECTION */
@@ -550,6 +551,154 @@ section.seasons .cards .autumn h3 {
     color: var(--autumn-900);
 }
 
+/* BUY TICKETS SECTION */
+section.buy-ticket {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem var(--glutter-normal);
+    background-color: var(--base-950);
+}
+
+section.buy-ticket a .title-unlock {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 1rem;
+    margin: auto;
+}
+ 
+section.buy-ticket a h2 {
+    color: var(--primary-50);
+    font-family: 'Satoshi';
+    font-weight: 500;
+    font-size:2rem;
+}
+
+section.buy-ticket a h2 span.alternative-font{
+    color: var(--primary-400);
+    font-family: 'Mazius';
+    font-style: italic;
+}
+
+section.buy-ticket a .right, section.buy-ticket a .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+section.buy-ticket a .bottom h2 {
+    text-align: right;
+}
+ 
+section.buy-ticket a .right .line {
+    flex: 1;
+    width: 10rem;
+    height: .25rem;
+    background-color: var(--primary-50);
+}
+
+section.buy-ticket a .bottom .arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+section.buy-ticket a .bottom .arrow .line {
+    width: 3rem;
+    height: .25rem;
+    background-color: var(--primary-50);
+}
+
+section.buy-ticket a .bottom .arrow .right {
+    border: solid var(--primary-50);
+    border-width: 0 .3rem .3rem 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+    padding: .5rem;
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 0.2rem;
+}
+
+
+/* QUESTIONS SECTION */
+section.questions {
+    padding: 3rem var(--glutter-normal) 8rem var(--glutter-normal);
+}
+
+section.questions .container {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+section.questions .container .bloc-question button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 2px var(--primary-950);
+    padding: 1.5rem 0rem;
+}
+
+section.questions .container .bloc-question button h4{
+    color: var(--primary-950);
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+section.questions .container .bloc-question button .see-more {
+    position: relative;
+    width: 1.2rem; 
+    height: 1.2rem;
+    margin-right: 1.3rem;
+}
+
+section.questions .container .bloc-question button .see-more span {
+    display: block;
+    height: 0.125rem;
+    background-color: var(--primary-950);
+    width: 100%;
+    border-radius: 100rem;
+    transition: all 0.5s ease;
+    z-index: 10;
+    transition: all .25s ease;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 50%;
+}
+
+section.questions .container .bloc-question button .see-more span:last-child {
+    transform: rotate(90deg);
+}
+
+section.questions .container .bloc-question button .see-more.active span:last-child{
+    display: none;
+}
+
+section.questions .container .bloc-question article.answer{
+    display: none;
+}
+
+section.questions .container .bloc-question article.answer.active{
+    padding: 2rem;
+    display: block;
+}
+
+section.questions .container .bloc-question article.answer p{
+    line-height: 1.2;
+}
+
+
+
 
 /* MEDIAS QUERIES */
 
@@ -568,10 +717,6 @@ section.seasons .cards .autumn h3 {
         margin-left: auto;
     }
 
-    /* section.concept {
-        padding: 5rem var(--glutter-normal);
-    } */
-
     section.concept .container .details .infos .price table {
         width:20rem;
     }
@@ -584,10 +729,54 @@ section.seasons .cards .autumn h3 {
         font-size: 4rem;
     }
 
+    section.artist .right .title h3 {
+        font-size:5rem;
+    }
+
+    section.buy-ticket {
+        height: 70svh;
+        padding: 0rem var(--glutter-normal);
+    }
+
+    section.buy-ticket a h2 {
+        font-size: 3rem;
+    }
+
+    section.buy-ticket a .bottom .arrow .line {
+        width: 4rem;
+    }
+    
+    section.buy-ticket a .bottom .arrow .right {
+        height: 2rem;
+        width: 2rem;
+        right: 0.3rem;
+    }
+    
+}
+
+/* above 768px */
+@media (min-width: 48rem) {
+    section.artist .right {
+        padding: 4rem var(--glutter-normal);
+    }
+
     section.artist {
         flex-direction: row;
     }
-}
+
+    section.artist .left .bg > p.sensivity {
+        bottom: 0rem;
+        right: -1.5rem;
+    }
+    
+    section.questions .container {
+        margin-top: 4rem;
+        margin-left: auto;
+        width: 80%;
+    }
+} 
+
+
 
 /* above 1024px */
 @media (min-width: 64rem) {
@@ -669,11 +858,6 @@ section.seasons .cards .autumn h3 {
         font-size: var(--text-lg);
     }
 
-    /* section.artist .right {
-        padding-left: var(--glutter-normal);
-        padding-right: var(--glutter-normal);
-    } */
-
     section.artist .left .camille img {
         width: 20rem;
     }
@@ -695,5 +879,18 @@ section.seasons .cards .autumn h3 {
     section.artist .left {
         width: 45%;
         padding: 2rem 0rem;
+    }
+
+    section.buy-ticket a h2 {
+        font-size: 5rem;
+    }
+
+    section.buy-ticket a .bottom .arrow .line {
+        width: 5rem;
+    }
+    
+    section.buy-ticket a .bottom .arrow .right {
+        height: 3rem;
+        width: 3rem;
     }
 }
