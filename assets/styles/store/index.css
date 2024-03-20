@@ -68,7 +68,7 @@ main nav.stepper a > div.step.check {
 /* RECAP TICKET */
 .form-recap .recap .ticket {
     border: solid 1px var(--primary-950);
-    max-width: 30rem;  /* est ce mieux 30 ou 25rem ? */
+    max-width: 25rem;  /* est ce mieux 30 ou 25rem ? */
     margin-bottom: 1.5rem;
 }
 
@@ -147,7 +147,7 @@ main nav.stepper a > div.step.check {
 
 /* SELL CONDITIONS */
 .form-recap .recap .sell-conditions{
-    max-width: 30rem;
+    max-width: 25rem; /* 30 ou 25rem  */
 }
 
 .form-recap .recap .sell-conditions p{

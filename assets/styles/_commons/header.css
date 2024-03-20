@@ -33,22 +33,38 @@ body .container > header nav a.selected::before {
     transform: translateX(-50%);
 }
 
+body .container > header nav ul li:not(.logo) a:not(.ticket)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.1rem;
+    bottom: -4px;
+    left: 0;
+    background:var(--base-950);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+body .container > header nav ul li:not(.logo) a:not(.ticket):hover::after {
+    transition: transform 0.3s ease;
+    transform: scaleX(1);
+    transform-origin: bottom left
+}
+
 body .container > header nav a.ticket.selected::before {
     bottom: -0.25rem;
     content: "•";
     color: var(--base-0);
 }
 
-body .container > header nav a {
+body .container > header nav a:not(.btn) {
     color: var(--base-950);
     font-size: var(--text-base);
 }
 
 body .container > header nav a.ticket {
     padding: .2rem 1rem;
-    color: var(--base-0);
-    border-radius: 100rem;
-    background-color: var(--primary-600);
 }
 
 body .container > header nav li.logo img {
@@ -69,8 +85,5 @@ body .container > header nav li.logo img {
 
     body .container > header nav a.ticket {
     padding: .375rem 2rem;
-    color: var(--base-0);
-    border-radius: 100rem;
-    background-color: var(--primary-600);
     }
 }
