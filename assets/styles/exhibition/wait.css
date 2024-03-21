@@ -129,9 +129,7 @@ section.tickets .ticket .infos .details .exhibit {
 section.tickets .ticket .infos .details .exhibit .dates p {
     font-weight: 600;
     font-size: var(--text-lg);
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
+    padding-bottom: 0.2rem;
 }
 
 
