@@ -48,22 +48,67 @@
                     </div>
 
                     <div class="form">
-                        <h1>Consultez votre <span class="alternative-font">réservation</span></h1>
-                        <form action="">
-                            <div class="infos">
-                                <div>
-                                    <label for="mail">Adresse mail</label>
-                                    <input type="mail" id="mail" name="mail" placeholder="jean@gmail.com" required>
-                                </div>
-    
-                                <div>
-                                    <label for="code-resa">Code de réservation ou mot de passe</label>
-                                    <input type="text" id="code-resa" name="code-resa" placeholder="1234" required>
-                                </div>
+                        <h1>Connexion</h1>
+
+                        <div class="buttons">
+                            <div class="button sign-in">
+                                <input id="sign-in" name="sign" type="radio" checked >
+                                <label for="sign-in">Se connecter</label>
                             </div>
-                            <a href="">Pas de réservation ?</a>
-                            <input class="btn" type="submit" value="Se connecter">
-                        </form>
+                            <div class="button sign-up">
+                                <input id="sign-up" name="sign"type="radio">
+                                <label for="sign-up">S'inscrire</label>
+                            </div>
+                        </div>
+
+                        <div class="wrapper">
+                            <div class="sign-in">
+                                <form action="">
+                                    <div class="infos">
+                                        <div>
+                                            <label for="mail">Adresse mail</label>
+                                            <input type="mail" id="mail" name="mail" placeholder="jean@gmail.com" required>
+                                        </div>
+            
+                                        <div>
+                                            <label for="code-resa">Mot de passe ou code de réservation</label>
+                                            <input type="text" id="code-resa" name="code-resa" placeholder="1234" required>
+                                        </div>
+                                    </div>
+                                    <input class="btn" type="submit" value="Se connecter">
+                                </form>
+                            </div>
+                            
+                            <div class="sign-up">
+                                <form action="">
+                                    <div class="infos">
+                                        <div class="name-last-name">
+                                            <div>
+                                                <label for="name">Nom</label>
+                                                <input type="text" name="name" id="name" placeholder="michel">
+                                            </div>
+                                            <div>
+                                                <label for="last-name">Prénom</label>
+                                                <input type="text" name="last-name" id="last-name" placeholder="jean">
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="mail">Adresse mail</label>
+                                            <input type="mail" id="mail" name="mail" placeholder="jean@gmail.com" required>
+                                        </div>
+            
+                                        <div>
+                                            <label for="code-resa">Mot de passe</label>
+                                            <input type="text" id="code-resa" name="code-resa" placeholder="1234" required>
+                                        </div>
+                                    </div>
+                                    <input class="btn" type="submit" value="S'inscrire">
+                                </form>
+                            </div>
+
+                            
+                        </div>  
                     </div>
                 </div>
             </main>
@@ -104,5 +149,6 @@
                 </div>
             </footer>
         </div>
+        <script src="assets/scripts/exhibition/connexion.js"></script>
     </body>
 </html>

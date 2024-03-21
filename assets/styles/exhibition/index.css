@@ -8,7 +8,7 @@ div.connexion h1 {
 }
 
 div.connexion {
-    height: 75svh;
+    height: 80svh;
     width: 100%;
     margin-left: auto;
     background-image: url(../../images/exhibition/bg-connect.webp);
@@ -47,6 +47,34 @@ div.connexion .form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 25rem;
+}
+
+div.connexion .form .buttons {
+    display: flex;
+    padding: .4rem;
+    border: solid .125rem var(--base-950);
+    width: 100%;
+}
+
+div.connexion .form .buttons > div {
+    width: 50%;
+}
+
+div.connexion .form .buttons input[type="radio"] {
+    display: none;
+}
+
+div.connexion .form .buttons .button input[type="radio"]:checked + label {
+    background-color: var(--base-950);
+    color: var(--base-0);
+}
+
+div.connexion .form .buttons label {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem;
 }
 
 div.connexion .form h1 span.alternative-font {
@@ -64,7 +92,7 @@ div.connexion .form form {
 div.connexion .form form .infos {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 div.connexion .form form .infos > div {
@@ -73,9 +101,21 @@ div.connexion .form form .infos > div {
     gap: .3rem;
 }
 
+div.connexion .form form .infos .name-last-name > div {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    width: 45%;
+}
+
+div.connexion .form form .infos .name-last-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 div.connexion .form form .infos > div input {
     border: solid 1px var(--base-950);
-    border-radius: .2rem;
     background-color: var(--base-50);
     padding: .8rem;
 }
@@ -92,6 +132,13 @@ div.connexion .form form input[type="submit"] {
     padding: 0.5rem 1.5rem;
     margin-left: auto;
 }
+
+div.connexion .form .wrapper .sign-up {
+    display: none;
+}
+
+
+
 
 
 /* MEDIAS QUERIES */
