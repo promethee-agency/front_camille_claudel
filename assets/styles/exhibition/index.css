@@ -61,10 +61,6 @@ div.connexion .form .buttons > div {
     width: 50%;
 }
 
-div.connexion .form .buttons input[type="radio"] {
-    display: none;
-}
-
 div.connexion .form .buttons .button input[type="radio"]:checked + label {
     background-color: var(--base-950);
     color: var(--base-0);

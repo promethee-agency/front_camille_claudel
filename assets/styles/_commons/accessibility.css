@@ -1,3 +1,8 @@
+:root {
+    /* COLORS */
+    --a11y-focus-color:#0a76f6;
+}
+
 /* SR-ONLY FOR ACCESSIBILITY #A11y */
 .sr-only {
     border: 0 !important;
@@ -11,3 +16,8 @@
     width: 1px !important;
     white-space: nowrap !important;
 }
+
+*:focus,
+*:focus + label {
+    outline: solid 2px var(--a11y-focus-color);
+} 

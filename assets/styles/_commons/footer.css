@@ -85,6 +85,10 @@ footer .footer .bottom {
     gap: 1rem;
 }
 
+footer .footer .bottom a {
+    color: var(--base-950);
+}
+
 footer .footer .bottom .line {
     display: none;
 }
