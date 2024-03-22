@@ -6,7 +6,7 @@ const $splashScreen = document.querySelector('.splash');
 // SHOW OR HIDE SPLASH SCREEN
 const showSplashScreen = (show = true) => {
     if (show) {
-        $splashScreen.style.display = 'flex';
+        $splashScreen.style.display = 'block';
     } else {
         $splashScreen.style.display = 'none'; 
     }
@@ -15,26 +15,18 @@ const showSplashScreen = (show = true) => {
 if (isFirstVisit()) {
     showSplashScreen(true);
 
-    // REMOVE SPLASH SCREEN AT THE END OF THE VIDEO
-    const $video = document.getElementById('splash-tutorial');
-
-    $video.addEventListener('ended', () => {
+    setTimeout(() => {
         $splashScreen.classList.add('fade-out');
-
-        // Attendez la fin de l'animation avant de masquer complètement l'écran de démarrage
         setTimeout(() => {
             showSplashScreen(false);
-        }, 500);
-    });
+        }, 500); 
+    }, 4000); 
 
-
-    // BUTTON SKIP TUTORIAL
-    $btn.addEventListener('click', () => {
+    // BUTTON SKIP INTRO
+    $btn.addEventListener('click', () => {        
         $splashScreen.classList.add('fade-out');
-
-        // Attendez la fin de l'animation avant de masquer complètement l'écran de démarrage
         setTimeout(() => {
             showSplashScreen(false);
-        }, 500);
+        }, 500); 
     });
 }

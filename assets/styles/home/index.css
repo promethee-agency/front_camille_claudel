@@ -1,3 +1,150 @@
+/* SPLASH SCREEN */
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--base-50);
+    z-index: 999;
+    display: none;
+}
+
+.splash.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.splash h1 {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.splash h1 span.alternative-font {
+    font-family: 'Mazius';
+    font-style: italic;
+}
+
+.splash img {
+    height: 55svh;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transform: translate(-50%, 0);
+    aspect-ratio: 260 / 277;
+    animation: slide-in 1000ms forwards ease;
+}
+
+.splash h1.travel {
+    position: absolute;
+    bottom: calc(55svh + 1rem);
+    transform: translate(0, 50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    animation: slide-in2 700ms forwards ease;
+    animation-delay: 500ms;
+   
+}
+
+.splash h1.home {
+    position: absolute;
+    bottom: 45svh;
+    transform: translate(0, 50%);
+    opacity: 0;
+    animation: slide-in2 1000ms forwards ease;
+    animation-delay: 500ms;
+    width: 100%;
+    text-align: center;
+}
+
+.splash button {
+    background-color: var(--base-950);
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    position: absolute;
+    opacity: 0;
+    animation: pop 500ms forwards ease;
+    animation-delay: 1200ms;
+    left: calc(50% + 25.8svh);
+    bottom: 18.3svh;
+    transform: translate(-50%, 50%) scale(75%);
+    overflow: hidden;
+}
+
+.splash button p {
+    color: var(--base-0);
+    font-weight: 500;
+    font-style: italic;
+    opacity: 0;
+    animation: slide-in3 800ms forwards ease;
+    animation-delay: 1300ms;
+}
+
+/* SPLASH SCREEN KEYFRAMES  */
+@keyframes slide-in {
+    0% {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+    100% {
+        transform: translate(-50%, 0%);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slide-in2 {
+    0% {
+        transform: translate(0, 150%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+    100% {
+        transform: translate(0, 50%);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in3 {
+    0% {
+        transform: translate(0, 200%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: translate(-50%, 50%) scale(75%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, 50%) scale(100%);
+        opacity: 1;
+    }
+}
+
+
+
+/* MAIN */
 section h2 {
     font-family: 'Mazius', serif;
     font-style: italic;
@@ -691,9 +838,39 @@ section.questions .container details p {
 
 /* above 640px */
 @media (min-width: 40rem) {
-    /* section.exhibition {
-        padding: 0 var(--glutter-normal);
-    } */
+    .splash h1 {
+        font-size: 7rem;
+        font-weight: 500;
+    }
+
+    .splash img {
+        height: 65svh;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        aspect-ratio: 260 / 277;
+    }
+
+    .splash h1.travel {
+        bottom: calc(65svh + 2rem);
+        transform: translate(0, 50%);
+       
+    }
+    
+    .splash h1.home {
+        bottom: 50svh;
+        transform: translate(0, 50%);
+    }
+
+    .splash button {
+        width: 9rem;
+        height: 9rem;
+        left: calc(50% + 30.5svh);
+        bottom: 21.7svh;
+        transform: translate(-50%, 50%) scale(75%);
+        overflow: hidden;
+    }
 
     section.exhibition .right .cards {
         width: 100%;
@@ -785,6 +962,11 @@ section.questions .container details p {
 
 /* above 1024px */
 @media (min-width: 64rem) {
+    .splash h1 {
+        font-size: 9rem;
+        font-weight: 500;
+    }
+    
     section h1 {
         font-size: 4rem;
     }

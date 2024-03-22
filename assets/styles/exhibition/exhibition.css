@@ -12,6 +12,11 @@
     display: none;
 }
 
+.splash.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
 .splash > video {
     width: 100%;
     position: relative;
