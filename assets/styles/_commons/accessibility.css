@@ -17,7 +17,7 @@
     white-space: nowrap !important;
 }
 
-*:focus,
-*:focus + label {
+*:focus-visible,
+*:focus-visible + label {
     outline: solid 2px var(--a11y-focus-color);
 } 

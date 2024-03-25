@@ -1,0 +1,1341 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="http://127.0.0.1:8000/en/boutique/">
+
+    <title>store.create.page-title - Prométhée</title>
+
+    <link rel="shortcut icon" href="http://127.0.0.1:8000/favicon.ico">
+
+    <link rel="stylesheet" href="/assets/styles/_commons/reset-9e1743c91d802df406e2e554c3c73bb6.css">
+    <link rel="stylesheet" href="/assets/styles/_commons/primitives-b242af8768a7e072be461258357e06c0.css">
+    <link rel="stylesheet" href="/assets/styles/_commons/tokens-eed51d7559423d067af0cbeaf1b55744.css">
+    <link rel="stylesheet" href="/assets/styles/_commons/main-989f6f8f424118fd539bf83fe14af692.css">
+    <link rel="stylesheet" href="/assets/styles/_commons/accessibility-93508fbc50cbe2e37fa0e75c87c978e5.css">
+    <link rel="stylesheet" href="/assets/styles/_commons/header-c06d1f92dfca1fe1f317500a8a574cf8.css">
+    <link rel="stylesheet" href="/assets/styles/_commons/footer-99aa06d3014798d86001c324468d497f.css">
+
+    <link rel="stylesheet" href="/assets/fonts/satoshi/fonts-42c1075796b8c53fc7ce2ead4c518888.css">
+    <link rel="stylesheet" href="/assets/fonts/mazius/fonts-7328a862bc1ee74fce70e409b0cc1151.css">
+
+    <link rel="stylesheet" href="/styles/store/create.css">
+
+
+    <script type="importmap" data-turbo-track="reload">
+{
+"imports": {
+    "app": "/assets/app-99aa06d3014798d86001c324468d497f.js",
+    "@hotwired/stimulus": "/assets/vendor/@hotwired/stimulus/stimulus.index-b5b1d00e42695b8959b4a1e94e3bc92a.js",
+    "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-e1ee9ace0562f2e6a52301e4ccc8627d.js",
+    "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-2d5cc4502f14101f1369329e3b034609.js",
+    "/assets/@symfony/ux-chartjs/controller.js": "/assets/@symfony/ux-chartjs/controller-59b2728296b990b7a6d272b7f43a7baa.js",
+    "/assets/@symfony/ux-turbo/turbo_controller.js": "/assets/@symfony/ux-turbo/turbo_controller-ce5e32dafdec0b7752f02e3e2cb25751.js",
+    "@hotwired/turbo": "/assets/vendor/@hotwired/turbo/turbo.index-810f44ef1a202a441e4866b7a4c72d11.js",
+    "chart.js/auto": "/assets/vendor/chart.js/auto-f8d4d65420070575e53375a8f7a71f0f.js"
+}
+}
+</script>
+    <!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support -->
+    <script async="" src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js"
+        data-turbo-track="reload"></script>
+    <link rel="modulepreload" href="/assets/app-99aa06d3014798d86001c324468d497f.js">
+    <script type="module" data-turbo-track="reload">import 'app';</script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/en/">Home</a></li>
+                    <li><a href="/en/exhibition/">Interactive Exhibit</a></li>
+                    <li class="logo"><a href="/en/"><img
+                                src="/assets/images/_commons/logos/logo-335e17f222a3fc197b385290202619c3.svg"
+                                alt=""><span class="sr-only">Home</span></a></li>
+                    <li><a href="https://promethee.agency/">Agency</a></li>
+                    <li><a href="/en/boutique/" class="ticket selected" aria-current="page">Tickets</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="create">
+                <h2>Achat billet</h2>
+
+                <form name="reservation" method="post">
+                    <section class="date-hours" id="date-horaire">
+                        <h3>Date et horaire</h3>
+                        <fieldset class="date">
+                            <legend>
+                                <h3>Date</h3>
+                            </legend>
+                            <div id="calendar" aria-disabled="true">
+                                <table>
+                                    <caption>March 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-02-25"
+                                                    id="2024-02-25disabled" disabled=""><label
+                                                    for="2024-02-25disabled">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-02-26"
+                                                    id="2024-02-26disabled" disabled=""><label
+                                                    for="2024-02-26disabled">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-02-27"
+                                                    id="2024-02-27disabled" disabled=""><label
+                                                    for="2024-02-27disabled">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-02-28"
+                                                    id="2024-02-28disabled" disabled=""><label
+                                                    for="2024-02-28disabled">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-02-29" id="2024-02-29"
+                                                    required="" disabled=""><label for="2024-02-29">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-01" id="2024-03-01"
+                                                    required="" disabled=""><label for="2024-03-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-02" id="2024-03-02"
+                                                    required="" disabled=""><label for="2024-03-02">3</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-03-03" id="2024-03-03"
+                                                    required="" disabled=""><label for="2024-03-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-04" id="2024-03-04"
+                                                    required="" disabled=""><label for="2024-03-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-05" id="2024-03-05"
+                                                    required="" disabled=""><label for="2024-03-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-06" id="2024-03-06"
+                                                    required="" disabled=""><label for="2024-03-06">7</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-07" id="2024-03-07"
+                                                    required="" disabled=""><label for="2024-03-07">8</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-08" id="2024-03-08"
+                                                    required="" disabled=""><label for="2024-03-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-09" id="2024-03-09"
+                                                    required="" disabled=""><label for="2024-03-09">10</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-03-10" id="2024-03-10"
+                                                    required="" disabled=""><label for="2024-03-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-11" id="2024-03-11"
+                                                    required="" disabled=""><label for="2024-03-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-12" id="2024-03-12"
+                                                    required="" disabled=""><label for="2024-03-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-13" id="2024-03-13"
+                                                    required="" disabled=""><label for="2024-03-13">14</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-14" id="2024-03-14"
+                                                    required="" disabled=""><label for="2024-03-14">15</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-15" id="2024-03-15"
+                                                    required="" disabled=""><label for="2024-03-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-16" id="2024-03-16"
+                                                    required="" disabled=""><label for="2024-03-16">17</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-03-17" id="2024-03-17"
+                                                    required="" disabled=""><label for="2024-03-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-18" id="2024-03-18"
+                                                    required="" disabled=""><label for="2024-03-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-19" id="2024-03-19"
+                                                    required="" disabled=""><label for="2024-03-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-20" id="2024-03-20"
+                                                    required="" disabled=""><label for="2024-03-20">21</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-21" id="2024-03-21"
+                                                    required="" disabled=""><label for="2024-03-21">22</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-22" id="2024-03-22"
+                                                    required="" disabled=""><label for="2024-03-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-23" id="2024-03-23"
+                                                    required="" disabled=""><label for="2024-03-23">24</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-03-24" id="2024-03-24"
+                                                    required="" disabled=""><label for="2024-03-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-25" id="2024-03-25"
+                                                    required=""><label for="2024-03-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-26" id="2024-03-26"
+                                                    required=""><label for="2024-03-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-27" id="2024-03-27"
+                                                    required=""><label for="2024-03-27">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-28" id="2024-03-28"
+                                                    required=""><label for="2024-03-28">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-29" id="2024-03-29"
+                                                    required=""><label for="2024-03-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-03-30" id="2024-03-30"
+                                                    required=""><label for="2024-03-30">31</label></td>
+                                        </tr>
+                                        <tr></tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>April 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-03-31" id="2024-03-31"
+                                                    required=""><label for="2024-03-31">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-01" id="2024-04-01"
+                                                    required=""><label for="2024-04-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-02" id="2024-04-02"
+                                                    required=""><label for="2024-04-02">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-03" id="2024-04-03"
+                                                    required=""><label for="2024-04-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-04" id="2024-04-04"
+                                                    required=""><label for="2024-04-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-05" id="2024-04-05"
+                                                    required=""><label for="2024-04-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-06" id="2024-04-06"
+                                                    required=""><label for="2024-04-06">7</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-04-07" id="2024-04-07"
+                                                    required=""><label for="2024-04-07">8</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-08" id="2024-04-08"
+                                                    required=""><label for="2024-04-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-09" id="2024-04-09"
+                                                    required=""><label for="2024-04-09">10</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-10" id="2024-04-10"
+                                                    required=""><label for="2024-04-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-11" id="2024-04-11"
+                                                    required=""><label for="2024-04-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-12" id="2024-04-12"
+                                                    required=""><label for="2024-04-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-13" id="2024-04-13"
+                                                    required=""><label for="2024-04-13">14</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-04-14" id="2024-04-14"
+                                                    required=""><label for="2024-04-14">15</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-15" id="2024-04-15"
+                                                    required=""><label for="2024-04-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-16" id="2024-04-16"
+                                                    required=""><label for="2024-04-16">17</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-17" id="2024-04-17"
+                                                    required=""><label for="2024-04-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-18" id="2024-04-18"
+                                                    required=""><label for="2024-04-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-19" id="2024-04-19"
+                                                    required=""><label for="2024-04-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-20" id="2024-04-20"
+                                                    required=""><label for="2024-04-20">21</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-04-21" id="2024-04-21"
+                                                    required=""><label for="2024-04-21">22</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-22" id="2024-04-22"
+                                                    required=""><label for="2024-04-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-23" id="2024-04-23"
+                                                    required=""><label for="2024-04-23">24</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-24" id="2024-04-24"
+                                                    required=""><label for="2024-04-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-25" id="2024-04-25"
+                                                    required=""><label for="2024-04-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-26" id="2024-04-26"
+                                                    required=""><label for="2024-04-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-27" id="2024-04-27"
+                                                    required=""><label for="2024-04-27">28</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-04-28" id="2024-04-28"
+                                                    required=""><label for="2024-04-28">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-29" id="2024-04-29"
+                                                    required=""><label for="2024-04-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-30"
+                                                    id="2024-04-30disabled" disabled=""><label
+                                                    for="2024-04-30disabled">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-01"
+                                                    id="2024-05-01disabled" disabled=""><label
+                                                    for="2024-05-01disabled">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-02"
+                                                    id="2024-05-02disabled" disabled=""><label
+                                                    for="2024-05-02disabled">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-03"
+                                                    id="2024-05-03disabled" disabled=""><label
+                                                    for="2024-05-03disabled">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-04"
+                                                    id="2024-05-04disabled" disabled=""><label
+                                                    for="2024-05-04disabled">5</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>May 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-04-28"
+                                                    id="2024-04-28disabled" disabled=""><label
+                                                    for="2024-04-28disabled">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-29"
+                                                    id="2024-04-29disabled" disabled=""><label
+                                                    for="2024-04-29disabled">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-04-30" id="2024-04-30"
+                                                    required=""><label for="2024-04-30">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-01" id="2024-05-01"
+                                                    required=""><label for="2024-05-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-02" id="2024-05-02"
+                                                    required=""><label for="2024-05-02">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-03" id="2024-05-03"
+                                                    required=""><label for="2024-05-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-04" id="2024-05-04"
+                                                    required=""><label for="2024-05-04">5</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-05-05" id="2024-05-05"
+                                                    required=""><label for="2024-05-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-06" id="2024-05-06"
+                                                    required=""><label for="2024-05-06">7</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-07" id="2024-05-07"
+                                                    required=""><label for="2024-05-07">8</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-08" id="2024-05-08"
+                                                    required=""><label for="2024-05-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-09" id="2024-05-09"
+                                                    required=""><label for="2024-05-09">10</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-10" id="2024-05-10"
+                                                    required=""><label for="2024-05-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-11" id="2024-05-11"
+                                                    required=""><label for="2024-05-11">12</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-05-12" id="2024-05-12"
+                                                    required=""><label for="2024-05-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-13" id="2024-05-13"
+                                                    required=""><label for="2024-05-13">14</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-14" id="2024-05-14"
+                                                    required=""><label for="2024-05-14">15</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-15" id="2024-05-15"
+                                                    required=""><label for="2024-05-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-16" id="2024-05-16"
+                                                    required=""><label for="2024-05-16">17</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-17" id="2024-05-17"
+                                                    required=""><label for="2024-05-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-18" id="2024-05-18"
+                                                    required=""><label for="2024-05-18">19</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-05-19" id="2024-05-19"
+                                                    required=""><label for="2024-05-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-20" id="2024-05-20"
+                                                    required=""><label for="2024-05-20">21</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-21" id="2024-05-21"
+                                                    required=""><label for="2024-05-21">22</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-22" id="2024-05-22"
+                                                    required=""><label for="2024-05-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-23" id="2024-05-23"
+                                                    required=""><label for="2024-05-23">24</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-24" id="2024-05-24"
+                                                    required=""><label for="2024-05-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-25" id="2024-05-25"
+                                                    required=""><label for="2024-05-25">26</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-05-26" id="2024-05-26"
+                                                    required=""><label for="2024-05-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-27" id="2024-05-27"
+                                                    required=""><label for="2024-05-27">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-28" id="2024-05-28"
+                                                    required=""><label for="2024-05-28">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-29" id="2024-05-29"
+                                                    required=""><label for="2024-05-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-30" id="2024-05-30"
+                                                    required=""><label for="2024-05-30">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-31"
+                                                    id="2024-05-31disabled" disabled=""><label
+                                                    for="2024-05-31disabled">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-01"
+                                                    id="2024-06-01disabled" disabled=""><label
+                                                    for="2024-06-01disabled">2</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>June 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-05-26"
+                                                    id="2024-05-26disabled" disabled=""><label
+                                                    for="2024-05-26disabled">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-27"
+                                                    id="2024-05-27disabled" disabled=""><label
+                                                    for="2024-05-27disabled">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-28"
+                                                    id="2024-05-28disabled" disabled=""><label
+                                                    for="2024-05-28disabled">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-29"
+                                                    id="2024-05-29disabled" disabled=""><label
+                                                    for="2024-05-29disabled">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-30"
+                                                    id="2024-05-30disabled" disabled=""><label
+                                                    for="2024-05-30disabled">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-05-31" id="2024-05-31"
+                                                    required=""><label for="2024-05-31">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-01" id="2024-06-01"
+                                                    required=""><label for="2024-06-01">2</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-06-02" id="2024-06-02"
+                                                    required=""><label for="2024-06-02">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-03" id="2024-06-03"
+                                                    required=""><label for="2024-06-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-04" id="2024-06-04"
+                                                    required=""><label for="2024-06-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-05" id="2024-06-05"
+                                                    required=""><label for="2024-06-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-06" id="2024-06-06"
+                                                    required=""><label for="2024-06-06">7</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-07" id="2024-06-07"
+                                                    required=""><label for="2024-06-07">8</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-08" id="2024-06-08"
+                                                    required=""><label for="2024-06-08">9</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-06-09" id="2024-06-09"
+                                                    required=""><label for="2024-06-09">10</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-10" id="2024-06-10"
+                                                    required=""><label for="2024-06-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-11" id="2024-06-11"
+                                                    required=""><label for="2024-06-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-12" id="2024-06-12"
+                                                    required=""><label for="2024-06-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-13" id="2024-06-13"
+                                                    required=""><label for="2024-06-13">14</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-14" id="2024-06-14"
+                                                    required=""><label for="2024-06-14">15</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-15" id="2024-06-15"
+                                                    required=""><label for="2024-06-15">16</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-06-16" id="2024-06-16"
+                                                    required=""><label for="2024-06-16">17</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-17" id="2024-06-17"
+                                                    required=""><label for="2024-06-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-18" id="2024-06-18"
+                                                    required=""><label for="2024-06-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-19" id="2024-06-19"
+                                                    required=""><label for="2024-06-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-20" id="2024-06-20"
+                                                    required=""><label for="2024-06-20">21</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-21" id="2024-06-21"
+                                                    required=""><label for="2024-06-21">22</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-22" id="2024-06-22"
+                                                    required=""><label for="2024-06-22">23</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-06-23" id="2024-06-23"
+                                                    required=""><label for="2024-06-23">24</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-24" id="2024-06-24"
+                                                    required=""><label for="2024-06-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-25" id="2024-06-25"
+                                                    required=""><label for="2024-06-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-26" id="2024-06-26"
+                                                    required=""><label for="2024-06-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-27" id="2024-06-27"
+                                                    required=""><label for="2024-06-27">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-28" id="2024-06-28"
+                                                    required=""><label for="2024-06-28">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-06-29" id="2024-06-29"
+                                                    required=""><label for="2024-06-29">30</label></td>
+                                        </tr>
+                                        <tr></tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>July 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-06-30" id="2024-06-30"
+                                                    required=""><label for="2024-06-30">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-01" id="2024-07-01"
+                                                    required=""><label for="2024-07-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-02" id="2024-07-02"
+                                                    required=""><label for="2024-07-02">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-03" id="2024-07-03"
+                                                    required=""><label for="2024-07-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-04" id="2024-07-04"
+                                                    required=""><label for="2024-07-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-05" id="2024-07-05"
+                                                    required=""><label for="2024-07-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-06" id="2024-07-06"
+                                                    required=""><label for="2024-07-06">7</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-07-07" id="2024-07-07"
+                                                    required=""><label for="2024-07-07">8</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-08" id="2024-07-08"
+                                                    required=""><label for="2024-07-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-09" id="2024-07-09"
+                                                    required=""><label for="2024-07-09">10</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-10" id="2024-07-10"
+                                                    required=""><label for="2024-07-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-11" id="2024-07-11"
+                                                    required=""><label for="2024-07-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-12" id="2024-07-12"
+                                                    required=""><label for="2024-07-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-13" id="2024-07-13"
+                                                    required=""><label for="2024-07-13">14</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-07-14" id="2024-07-14"
+                                                    required=""><label for="2024-07-14">15</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-15" id="2024-07-15"
+                                                    required=""><label for="2024-07-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-16" id="2024-07-16"
+                                                    required=""><label for="2024-07-16">17</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-17" id="2024-07-17"
+                                                    required=""><label for="2024-07-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-18" id="2024-07-18"
+                                                    required=""><label for="2024-07-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-19" id="2024-07-19"
+                                                    required=""><label for="2024-07-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-20" id="2024-07-20"
+                                                    required=""><label for="2024-07-20">21</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-07-21" id="2024-07-21"
+                                                    required=""><label for="2024-07-21">22</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-22" id="2024-07-22"
+                                                    required=""><label for="2024-07-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-23" id="2024-07-23"
+                                                    required=""><label for="2024-07-23">24</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-24" id="2024-07-24"
+                                                    required=""><label for="2024-07-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-25" id="2024-07-25"
+                                                    required=""><label for="2024-07-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-26" id="2024-07-26"
+                                                    required=""><label for="2024-07-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-27" id="2024-07-27"
+                                                    required=""><label for="2024-07-27">28</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-07-28" id="2024-07-28"
+                                                    required=""><label for="2024-07-28">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-29" id="2024-07-29"
+                                                    required=""><label for="2024-07-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-30" id="2024-07-30"
+                                                    required=""><label for="2024-07-30">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-31"
+                                                    id="2024-07-31disabled" disabled=""><label
+                                                    for="2024-07-31disabled">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-01"
+                                                    id="2024-08-01disabled" disabled=""><label
+                                                    for="2024-08-01disabled">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-02"
+                                                    id="2024-08-02disabled" disabled=""><label
+                                                    for="2024-08-02disabled">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-03"
+                                                    id="2024-08-03disabled" disabled=""><label
+                                                    for="2024-08-03disabled">4</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>August 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-07-28"
+                                                    id="2024-07-28disabled" disabled=""><label
+                                                    for="2024-07-28disabled">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-29"
+                                                    id="2024-07-29disabled" disabled=""><label
+                                                    for="2024-07-29disabled">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-30"
+                                                    id="2024-07-30disabled" disabled=""><label
+                                                    for="2024-07-30disabled">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-07-31" id="2024-07-31"
+                                                    required=""><label for="2024-07-31">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-01" id="2024-08-01"
+                                                    required=""><label for="2024-08-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-02" id="2024-08-02"
+                                                    required=""><label for="2024-08-02">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-03" id="2024-08-03"
+                                                    required=""><label for="2024-08-03">4</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-08-04" id="2024-08-04"
+                                                    required=""><label for="2024-08-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-05" id="2024-08-05"
+                                                    required=""><label for="2024-08-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-06" id="2024-08-06"
+                                                    required=""><label for="2024-08-06">7</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-07" id="2024-08-07"
+                                                    required=""><label for="2024-08-07">8</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-08" id="2024-08-08"
+                                                    required=""><label for="2024-08-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-09" id="2024-08-09"
+                                                    required=""><label for="2024-08-09">10</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-10" id="2024-08-10"
+                                                    required=""><label for="2024-08-10">11</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-08-11" id="2024-08-11"
+                                                    required=""><label for="2024-08-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-12" id="2024-08-12"
+                                                    required=""><label for="2024-08-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-13" id="2024-08-13"
+                                                    required=""><label for="2024-08-13">14</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-14" id="2024-08-14"
+                                                    required=""><label for="2024-08-14">15</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-15" id="2024-08-15"
+                                                    required=""><label for="2024-08-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-16" id="2024-08-16"
+                                                    required=""><label for="2024-08-16">17</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-17" id="2024-08-17"
+                                                    required=""><label for="2024-08-17">18</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-08-18" id="2024-08-18"
+                                                    required=""><label for="2024-08-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-19" id="2024-08-19"
+                                                    required=""><label for="2024-08-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-20" id="2024-08-20"
+                                                    required=""><label for="2024-08-20">21</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-21" id="2024-08-21"
+                                                    required=""><label for="2024-08-21">22</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-22" id="2024-08-22"
+                                                    required=""><label for="2024-08-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-23" id="2024-08-23"
+                                                    required=""><label for="2024-08-23">24</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-24" id="2024-08-24"
+                                                    required=""><label for="2024-08-24">25</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-08-25" id="2024-08-25"
+                                                    required=""><label for="2024-08-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-26" id="2024-08-26"
+                                                    required=""><label for="2024-08-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-27" id="2024-08-27"
+                                                    required=""><label for="2024-08-27">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-28" id="2024-08-28"
+                                                    required=""><label for="2024-08-28">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-29" id="2024-08-29"
+                                                    required=""><label for="2024-08-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-30" id="2024-08-30"
+                                                    required=""><label for="2024-08-30">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-31"
+                                                    id="2024-08-31disabled" disabled=""><label
+                                                    for="2024-08-31disabled">1</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>September 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-08-25"
+                                                    id="2024-08-25disabled" disabled=""><label
+                                                    for="2024-08-25disabled">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-26"
+                                                    id="2024-08-26disabled" disabled=""><label
+                                                    for="2024-08-26disabled">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-27"
+                                                    id="2024-08-27disabled" disabled=""><label
+                                                    for="2024-08-27disabled">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-28"
+                                                    id="2024-08-28disabled" disabled=""><label
+                                                    for="2024-08-28disabled">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-29"
+                                                    id="2024-08-29disabled" disabled=""><label
+                                                    for="2024-08-29disabled">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-30"
+                                                    id="2024-08-30disabled" disabled=""><label
+                                                    for="2024-08-30disabled">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-08-31" id="2024-08-31"
+                                                    required=""><label for="2024-08-31">1</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-09-01" id="2024-09-01"
+                                                    required=""><label for="2024-09-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-02" id="2024-09-02"
+                                                    required=""><label for="2024-09-02">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-03" id="2024-09-03"
+                                                    required=""><label for="2024-09-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-04" id="2024-09-04"
+                                                    required=""><label for="2024-09-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-05" id="2024-09-05"
+                                                    required=""><label for="2024-09-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-06" id="2024-09-06"
+                                                    required=""><label for="2024-09-06">7</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-07" id="2024-09-07"
+                                                    required=""><label for="2024-09-07">8</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-09-08" id="2024-09-08"
+                                                    required=""><label for="2024-09-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-09" id="2024-09-09"
+                                                    required=""><label for="2024-09-09">10</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-10" id="2024-09-10"
+                                                    required=""><label for="2024-09-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-11" id="2024-09-11"
+                                                    required=""><label for="2024-09-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-12" id="2024-09-12"
+                                                    required=""><label for="2024-09-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-13" id="2024-09-13"
+                                                    required=""><label for="2024-09-13">14</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-14" id="2024-09-14"
+                                                    required=""><label for="2024-09-14">15</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-09-15" id="2024-09-15"
+                                                    required=""><label for="2024-09-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-16" id="2024-09-16"
+                                                    required=""><label for="2024-09-16">17</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-17" id="2024-09-17"
+                                                    required=""><label for="2024-09-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-18" id="2024-09-18"
+                                                    required=""><label for="2024-09-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-19" id="2024-09-19"
+                                                    required=""><label for="2024-09-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-20" id="2024-09-20"
+                                                    required=""><label for="2024-09-20">21</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-21" id="2024-09-21"
+                                                    required=""><label for="2024-09-21">22</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-09-22" id="2024-09-22"
+                                                    required=""><label for="2024-09-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-23" id="2024-09-23"
+                                                    required=""><label for="2024-09-23">24</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-24" id="2024-09-24"
+                                                    required=""><label for="2024-09-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-25" id="2024-09-25"
+                                                    required=""><label for="2024-09-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-26" id="2024-09-26"
+                                                    required=""><label for="2024-09-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-27" id="2024-09-27"
+                                                    required=""><label for="2024-09-27">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-28" id="2024-09-28"
+                                                    required=""><label for="2024-09-28">29</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-09-29" id="2024-09-29"
+                                                    required=""><label for="2024-09-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-30"
+                                                    id="2024-09-30disabled" disabled=""><label
+                                                    for="2024-09-30disabled">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-01"
+                                                    id="2024-10-01disabled" disabled=""><label
+                                                    for="2024-10-01disabled">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-02"
+                                                    id="2024-10-02disabled" disabled=""><label
+                                                    for="2024-10-02disabled">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-03"
+                                                    id="2024-10-03disabled" disabled=""><label
+                                                    for="2024-10-03disabled">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-04"
+                                                    id="2024-10-04disabled" disabled=""><label
+                                                    for="2024-10-04disabled">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-05"
+                                                    id="2024-10-05disabled" disabled=""><label
+                                                    for="2024-10-05disabled">6</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>October 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-09-29"
+                                                    id="2024-09-29disabled" disabled=""><label
+                                                    for="2024-09-29disabled">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-09-30" id="2024-09-30"
+                                                    required=""><label for="2024-09-30">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-01" id="2024-10-01"
+                                                    required=""><label for="2024-10-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-02" id="2024-10-02"
+                                                    required=""><label for="2024-10-02">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-03" id="2024-10-03"
+                                                    required=""><label for="2024-10-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-04" id="2024-10-04"
+                                                    required=""><label for="2024-10-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-05" id="2024-10-05"
+                                                    required=""><label for="2024-10-05">6</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-10-06" id="2024-10-06"
+                                                    required=""><label for="2024-10-06">7</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-07" id="2024-10-07"
+                                                    required=""><label for="2024-10-07">8</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-08" id="2024-10-08"
+                                                    required=""><label for="2024-10-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-09" id="2024-10-09"
+                                                    required=""><label for="2024-10-09">10</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-10" id="2024-10-10"
+                                                    required=""><label for="2024-10-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-11" id="2024-10-11"
+                                                    required=""><label for="2024-10-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-12" id="2024-10-12"
+                                                    required=""><label for="2024-10-12">13</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-10-13" id="2024-10-13"
+                                                    required=""><label for="2024-10-13">14</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-14" id="2024-10-14"
+                                                    required=""><label for="2024-10-14">15</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-15" id="2024-10-15"
+                                                    required=""><label for="2024-10-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-16" id="2024-10-16"
+                                                    required=""><label for="2024-10-16">17</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-17" id="2024-10-17"
+                                                    required=""><label for="2024-10-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-18" id="2024-10-18"
+                                                    required=""><label for="2024-10-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-19" id="2024-10-19"
+                                                    required=""><label for="2024-10-19">20</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-10-20" id="2024-10-20"
+                                                    required=""><label for="2024-10-20">21</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-21" id="2024-10-21"
+                                                    required=""><label for="2024-10-21">22</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-22" id="2024-10-22"
+                                                    required=""><label for="2024-10-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-23" id="2024-10-23"
+                                                    required=""><label for="2024-10-23">24</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-24" id="2024-10-24"
+                                                    required=""><label for="2024-10-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-25" id="2024-10-25"
+                                                    required=""><label for="2024-10-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-26" id="2024-10-26"
+                                                    required=""><label for="2024-10-26">27</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-10-27" id="2024-10-27"
+                                                    required=""><label for="2024-10-27">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-28" id="2024-10-28"
+                                                    required=""><label for="2024-10-28">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-29" id="2024-10-29"
+                                                    required=""><label for="2024-10-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-30" id="2024-10-30"
+                                                    required=""><label for="2024-10-30">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-31"
+                                                    id="2024-10-31disabled" disabled=""><label
+                                                    for="2024-10-31disabled">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-01"
+                                                    id="2024-11-01disabled" disabled=""><label
+                                                    for="2024-11-01disabled">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-02"
+                                                    id="2024-11-02disabled" disabled=""><label
+                                                    for="2024-11-02disabled">3</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>November 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-10-27"
+                                                    id="2024-10-27disabled" disabled=""><label
+                                                    for="2024-10-27disabled">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-28"
+                                                    id="2024-10-28disabled" disabled=""><label
+                                                    for="2024-10-28disabled">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-29"
+                                                    id="2024-10-29disabled" disabled=""><label
+                                                    for="2024-10-29disabled">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-30"
+                                                    id="2024-10-30disabled" disabled=""><label
+                                                    for="2024-10-30disabled">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-10-31" id="2024-10-31"
+                                                    required=""><label for="2024-10-31">1</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-01" id="2024-11-01"
+                                                    required=""><label for="2024-11-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-02" id="2024-11-02"
+                                                    required=""><label for="2024-11-02">3</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-11-03" id="2024-11-03"
+                                                    required=""><label for="2024-11-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-04" id="2024-11-04"
+                                                    required=""><label for="2024-11-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-05" id="2024-11-05"
+                                                    required=""><label for="2024-11-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-06" id="2024-11-06"
+                                                    required=""><label for="2024-11-06">7</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-07" id="2024-11-07"
+                                                    required=""><label for="2024-11-07">8</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-08" id="2024-11-08"
+                                                    required=""><label for="2024-11-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-09" id="2024-11-09"
+                                                    required=""><label for="2024-11-09">10</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-11-10" id="2024-11-10"
+                                                    required=""><label for="2024-11-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-11" id="2024-11-11"
+                                                    required=""><label for="2024-11-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-12" id="2024-11-12"
+                                                    required=""><label for="2024-11-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-13" id="2024-11-13"
+                                                    required=""><label for="2024-11-13">14</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-14" id="2024-11-14"
+                                                    required=""><label for="2024-11-14">15</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-15" id="2024-11-15"
+                                                    required=""><label for="2024-11-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-16" id="2024-11-16"
+                                                    required=""><label for="2024-11-16">17</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-11-17" id="2024-11-17"
+                                                    required=""><label for="2024-11-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-18" id="2024-11-18"
+                                                    required=""><label for="2024-11-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-19" id="2024-11-19"
+                                                    required=""><label for="2024-11-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-20" id="2024-11-20"
+                                                    required=""><label for="2024-11-20">21</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-21" id="2024-11-21"
+                                                    required=""><label for="2024-11-21">22</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-22" id="2024-11-22"
+                                                    required=""><label for="2024-11-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-23" id="2024-11-23"
+                                                    required=""><label for="2024-11-23">24</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-11-24" id="2024-11-24"
+                                                    required=""><label for="2024-11-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-25" id="2024-11-25"
+                                                    required=""><label for="2024-11-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-26" id="2024-11-26"
+                                                    required=""><label for="2024-11-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-27" id="2024-11-27"
+                                                    required=""><label for="2024-11-27">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-28" id="2024-11-28"
+                                                    required=""><label for="2024-11-28">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-29" id="2024-11-29"
+                                                    required=""><label for="2024-11-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-30"
+                                                    id="2024-11-30disabled" disabled=""><label
+                                                    for="2024-11-30disabled">1</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>December 2024</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-11-24"
+                                                    id="2024-11-24disabled" disabled=""><label
+                                                    for="2024-11-24disabled">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-25"
+                                                    id="2024-11-25disabled" disabled=""><label
+                                                    for="2024-11-25disabled">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-26"
+                                                    id="2024-11-26disabled" disabled=""><label
+                                                    for="2024-11-26disabled">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-27"
+                                                    id="2024-11-27disabled" disabled=""><label
+                                                    for="2024-11-27disabled">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-28"
+                                                    id="2024-11-28disabled" disabled=""><label
+                                                    for="2024-11-28disabled">29</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-29"
+                                                    id="2024-11-29disabled" disabled=""><label
+                                                    for="2024-11-29disabled">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-11-30" id="2024-11-30"
+                                                    required=""><label for="2024-11-30">1</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-12-01" id="2024-12-01"
+                                                    required=""><label for="2024-12-01">2</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-02" id="2024-12-02"
+                                                    required=""><label for="2024-12-02">3</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-03" id="2024-12-03"
+                                                    required=""><label for="2024-12-03">4</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-04" id="2024-12-04"
+                                                    required=""><label for="2024-12-04">5</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-05" id="2024-12-05"
+                                                    required=""><label for="2024-12-05">6</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-06" id="2024-12-06"
+                                                    required=""><label for="2024-12-06">7</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-07" id="2024-12-07"
+                                                    required=""><label for="2024-12-07">8</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-12-08" id="2024-12-08"
+                                                    required=""><label for="2024-12-08">9</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-09" id="2024-12-09"
+                                                    required=""><label for="2024-12-09">10</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-10" id="2024-12-10"
+                                                    required=""><label for="2024-12-10">11</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-11" id="2024-12-11"
+                                                    required=""><label for="2024-12-11">12</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-12" id="2024-12-12"
+                                                    required=""><label for="2024-12-12">13</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-13" id="2024-12-13"
+                                                    required=""><label for="2024-12-13">14</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-14" id="2024-12-14"
+                                                    required=""><label for="2024-12-14">15</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-12-15" id="2024-12-15"
+                                                    required=""><label for="2024-12-15">16</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-16" id="2024-12-16"
+                                                    required=""><label for="2024-12-16">17</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-17" id="2024-12-17"
+                                                    required=""><label for="2024-12-17">18</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-18" id="2024-12-18"
+                                                    required=""><label for="2024-12-18">19</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-19" id="2024-12-19"
+                                                    required=""><label for="2024-12-19">20</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-20" id="2024-12-20"
+                                                    required=""><label for="2024-12-20">21</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-21" id="2024-12-21"
+                                                    required=""><label for="2024-12-21">22</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-12-22" id="2024-12-22"
+                                                    required=""><label for="2024-12-22">23</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-23" id="2024-12-23"
+                                                    required=""><label for="2024-12-23">24</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-24" id="2024-12-24"
+                                                    required=""><label for="2024-12-24">25</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-25" id="2024-12-25"
+                                                    required=""><label for="2024-12-25">26</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-26" id="2024-12-26"
+                                                    required=""><label for="2024-12-26">27</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-27" id="2024-12-27"
+                                                    required=""><label for="2024-12-27">28</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-28" id="2024-12-28"
+                                                    required=""><label for="2024-12-28">29</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="date" value="2024-12-29" id="2024-12-29"
+                                                    required=""><label for="2024-12-29">30</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-30" id="2024-12-30"
+                                                    required=""><label for="2024-12-30">31</label></td>
+                                            <td><input type="radio" name="date" value="2024-12-31"
+                                                    id="2024-12-31disabled" disabled=""><label
+                                                    for="2024-12-31disabled">1</label></td>
+                                            <td><input type="radio" name="date" value="2025-01-01"
+                                                    id="2025-01-01disabled" disabled=""><label
+                                                    for="2025-01-01disabled">2</label></td>
+                                            <td><input type="radio" name="date" value="2025-01-02"
+                                                    id="2025-01-02disabled" disabled=""><label
+                                                    for="2025-01-02disabled">3</label></td>
+                                            <td><input type="radio" name="date" value="2025-01-03"
+                                                    id="2025-01-03disabled" disabled=""><label
+                                                    for="2025-01-03disabled">4</label></td>
+                                            <td><input type="radio" name="date" value="2025-01-04"
+                                                    id="2025-01-04disabled" disabled=""><label
+                                                    for="2025-01-04disabled">5</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+                        <fieldset class="hours">
+                            <legend>
+                                <h3>Heure</h3>
+                            </legend>
+                            <div>
+                                <div id="reservation_hours"><input type="radio" id="reservation_hours_0"
+                                        name="reservation[hours]" required="required" value="09:00"><label
+                                        for="reservation_hours_0" class="required">09:00</label><input type="radio"
+                                        id="reservation_hours_1" name="reservation[hours]" required="required"
+                                        value="10:00"><label for="reservation_hours_1"
+                                        class="required">10:00</label><input type="radio" id="reservation_hours_2"
+                                        name="reservation[hours]" required="required" value="11:00"><label
+                                        for="reservation_hours_2" class="required">11:00</label><input type="radio"
+                                        id="reservation_hours_3" name="reservation[hours]" required="required"
+                                        value="12:00"><label for="reservation_hours_3"
+                                        class="required">12:00</label><input type="radio" id="reservation_hours_4"
+                                        name="reservation[hours]" required="required" value="13:00"><label
+                                        for="reservation_hours_4" class="required">13:00</label><input type="radio"
+                                        id="reservation_hours_5" name="reservation[hours]" required="required"
+                                        value="14:00"><label for="reservation_hours_5"
+                                        class="required">14:00</label><input type="radio" id="reservation_hours_6"
+                                        name="reservation[hours]" required="required" value="15:00"><label
+                                        for="reservation_hours_6" class="required">15:00</label><input type="radio"
+                                        id="reservation_hours_7" name="reservation[hours]" required="required"
+                                        value="16:00"><label for="reservation_hours_7"
+                                        class="required">16:00</label><input type="radio" id="reservation_hours_8"
+                                        name="reservation[hours]" required="required" value="17:00"><label
+                                        for="reservation_hours_8" class="required">17:00</label><input type="radio"
+                                        id="reservation_hours_9" name="reservation[hours]" required="required"
+                                        value="18:00"><label for="reservation_hours_9"
+                                        class="required">18:00</label><input type="radio" id="reservation_hours_10"
+                                        name="reservation[hours]" required="required" value="19:00"><label
+                                        for="reservation_hours_10" class="required">19:00</label><input type="radio"
+                                        id="reservation_hours_11" name="reservation[hours]" required="required"
+                                        value="20:00"><label for="reservation_hours_11" class="required">20:00</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </section>
+
+                    <section class="categories" id="categories">
+                        <h3>Catégorie</h3>
+                        <fieldset data-category="1">
+                            <legend>
+                                <h4>Gratuit -18 ans</h4>
+                                <p>0€</p>
+                            </legend>
+                            <div class="controls">
+                                <button type="button" data-action="remove" class="remove">-</button>
+                                <input type="number" id="counter_1" value="0" readonly="">
+                                <button type="button" data-action="add" class="add">+</button>
+                            </div>
+                            <div class="tickets">
+                                <div>
+                                    <div id="reservation_tickets___name__">
+                                        <div>
+                                            <div id="reservation_tickets___name___user"
+                                                data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
+                                            </div>
+                                        </div>
+                                        <div><select id="reservation_tickets___name___category"
+                                                name="reservation[tickets][__name__][category]" style="display: none;">
+                                                <option value=""></option>
+                                                <option value="1">minus18</option>
+                                                <option value="2">student</option>
+                                                <option value="3">full</option>
+                                            </select></div>
+                                        <div>
+                                            <div id="reservation_tickets___name___user___name__000">
+                                                <div><label for="reservation_tickets___name___user___name___email000"
+                                                        class="required">Email</label><input type="email"
+                                                        id="reservation_tickets___name___user___name___email000"
+                                                        name="reservation[tickets][__name__][user][__name__][email]"
+                                                        required="required"></div>
+                                                <div><label for="reservation_tickets___name___user___name___lastName000"
+                                                        class="required">Last name</label><input type="text"
+                                                        id="reservation_tickets___name___user___name___lastName000"
+                                                        name="reservation[tickets][__name__][user][__name__][lastName]"
+                                                        required="required"></div>
+                                                <div><label
+                                                        for="reservation_tickets___name___user___name___firstName000"
+                                                        class="required">First name</label><input type="text"
+                                                        id="reservation_tickets___name___user___name___firstName000"
+                                                        name="reservation[tickets][__name__][user][__name__][firstName]"
+                                                        required="required"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="reservation_tickets___name__">
+                                        <div>
+                                            <div id="reservation_tickets___name___user"
+                                                data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
+                                            </div>
+                                        </div>
+                                        <div><select id="reservation_tickets___name___category"
+                                                name="reservation[tickets][__name__][category]" style="display: none;">
+                                                <option value=""></option>
+                                                <option value="1">minus18</option>
+                                                <option value="2">student</option>
+                                                <option value="3">full</option>
+                                            </select></div>
+                                        <div>
+                                            <div id="reservation_tickets___name___user___name__001">
+                                                <div><label for="reservation_tickets___name___user___name___email001"
+                                                        class="required">Email</label><input type="email"
+                                                        id="reservation_tickets___name___user___name___email001"
+                                                        name="reservation[tickets][__name__][user][__name__][email]"
+                                                        required="required"></div>
+                                                <div><label for="reservation_tickets___name___user___name___lastName001"
+                                                        class="required">Last name</label><input type="text"
+                                                        id="reservation_tickets___name___user___name___lastName001"
+                                                        name="reservation[tickets][__name__][user][__name__][lastName]"
+                                                        required="required"></div>
+                                                <div><label
+                                                        for="reservation_tickets___name___user___name___firstName001"
+                                                        class="required">First name</label><input type="text"
+                                                        id="reservation_tickets___name___user___name___firstName001"
+                                                        name="reservation[tickets][__name__][user][__name__][firstName]"
+                                                        required="required"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset data-category="2">
+                            <legend>
+                                <h4>Tarif étudiant</h4>
+                                <p>6€</p>
+                            </legend>
+                            <div class="controls">
+                                <button type="button" data-action="remove" class="remove">-</button>
+                                <input type="number" id="counter_2" value="0" readonly="">
+                                <button type="button" data-action="add" class="add">+</button>
+                            </div>
+                            <div class="tickets"></div>
+                        </fieldset>
+                        <fieldset data-category="3">
+                            <legend>
+                                <h4>Plein tarif</h4>
+                                <p>10€</p>
+                            </legend>
+                            <div class="controls">
+                                <button type="button" data-action="remove" class="remove">-</button>
+                                <input type="number" id="counter_3" value="0" readonly="">
+                                <button type="button" data-action="add" class="add">+</button>
+                            </div>
+                            <div class="tickets">
+                                <div>
+                                    <div id="reservation_tickets___name__">
+                                        <div>
+                                            <div id="reservation_tickets___name___user"
+                                                data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
+                                            </div>
+                                        </div>
+                                        <div><select id="reservation_tickets___name___category"
+                                                name="reservation[tickets][__name__][category]" style="display: none;">
+                                                <option value=""></option>
+                                                <option value="1">minus18</option>
+                                                <option value="2">student</option>
+                                                <option value="3">full</option>
+                                            </select></div>
+                                        <div>
+                                            <div id="reservation_tickets___name___user___name__002">
+                                                <div><label for="reservation_tickets___name___user___name___email002"
+                                                        class="required">Email</label><input type="email"
+                                                        id="reservation_tickets___name___user___name___email002"
+                                                        name="reservation[tickets][__name__][user][__name__][email]"
+                                                        required="required"></div>
+                                                <div><label for="reservation_tickets___name___user___name___lastName002"
+                                                        class="required">Last name</label><input type="text"
+                                                        id="reservation_tickets___name___user___name___lastName002"
+                                                        name="reservation[tickets][__name__][user][__name__][lastName]"
+                                                        required="required"></div>
+                                                <div><label
+                                                        for="reservation_tickets___name___user___name___firstName002"
+                                                        class="required">First name</label><input type="text"
+                                                        id="reservation_tickets___name___user___name___firstName002"
+                                                        name="reservation[tickets][__name__][user][__name__][firstName]"
+                                                        required="required"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </section>
+
+                    <section class="sumarry" id="resume"></section>
+                    <span data-ticket-per-reservation="5"></span>
+                    <div><input type="date" id="reservation_reservationAt" name="reservation[reservationAt]"
+                            class="sr-only"></div>
+                    <div>
+                        <div id="reservation_tickets"
+                            data-prototype="<div><div id=&quot;reservation_tickets___name__&quot;><div><div id=&quot;reservation_tickets___name___user&quot; data-prototype=&quot;&amp;lt;div&amp;gt;&amp;lt;div id=&amp;quot;reservation_tickets___name___user___name__&amp;quot;&amp;gt;&amp;lt;div&amp;gt;&amp;lt;label for=&amp;quot;reservation_tickets___name___user___name___email&amp;quot; class=&amp;quot;required&amp;quot;&amp;gt;Email&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;email&amp;quot; id=&amp;quot;reservation_tickets___name___user___name___email&amp;quot; name=&amp;quot;reservation[tickets][__name__][user][__name__][email]&amp;quot; required=&amp;quot;required&amp;quot; /&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;label for=&amp;quot;reservation_tickets___name___user___name___lastName&amp;quot; class=&amp;quot;required&amp;quot;&amp;gt;Last name&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;reservation_tickets___name___user___name___lastName&amp;quot; name=&amp;quot;reservation[tickets][__name__][user][__name__][lastName]&amp;quot; required=&amp;quot;required&amp;quot; /&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;label for=&amp;quot;reservation_tickets___name___user___name___firstName&amp;quot; class=&amp;quot;required&amp;quot;&amp;gt;First name&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;reservation_tickets___name___user___name___firstName&amp;quot; name=&amp;quot;reservation[tickets][__name__][user][__name__][firstName]&amp;quot; required=&amp;quot;required&amp;quot; /&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&quot;></div></div><div><select id=&quot;reservation_tickets___name___category&quot; name=&quot;reservation[tickets][__name__][category]&quot; style=&quot;display: none;&quot;><option value=&quot;&quot;></option><option value=&quot;1&quot;>minus18</option><option value=&quot;2&quot;>student</option><option value=&quot;3&quot;>full</option></select></div></div></div>">
+                        </div>
+                    </div>
+                    <div><button type="submit" id="reservation_submit" name="reservation[submit]">Submit</button></div>
+                    <input type="hidden" id="reservation__token" name="reservation[_token]"
+                        value="03674ab86f8aab078807f.VIaZCS_uFIan5cCaVAZlgBW1yRYhYotVEKMSfXJ5qzo.HsnWMUmKX7_Fuqr9YDFd13vE-S55U80-IuVNKkca4XBmsMheer1t5YqNkQ">
+                </form>
+
+            </section>
+        </main>
+        <footer>
+        </footer>
+    </div>
+
+</body>
+
+</html>
