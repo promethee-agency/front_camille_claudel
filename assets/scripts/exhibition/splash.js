@@ -1,4 +1,15 @@
-import { isFirstVisit } from "../_commons/isFirstVisit.js";
+const isFirstVisit = () => {
+    const location = window.location.href;
+    const visitState = JSON.parse(localStorage.getItem('app.visitState')) || {};
+  
+    if (!(location in visitState && visitState[location])) {
+        visitState[location] = true;
+        localStorage.setItem('app.visitState', JSON.stringify(visitState));
+        return true;
+    }
+  
+    return false;
+};
 
 const $btn = document.querySelector('.splash > button');
 const $splashScreen = document.querySelector('.splash');
