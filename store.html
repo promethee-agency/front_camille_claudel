@@ -47,26 +47,26 @@
 
             <!-- SECONDARY NAV -->
             <nav class="stepper" role="navigation" aria-label="Menu secondaire">
-                <a href="">
-                    <div class="step check">&#x2713</div>
+                <button class="dates" type="button">
+                    <div class="step"><span>1</span></div>
                     <p class="current">Dates & horraires</p>
-                </a>
+				</button>
 
-                <a href="">
+                <button class="tickets" type="button">
                     <div class="step">2</div>
                     <p>Nombre de billet</p>
-                </a>
+				</button>
 
-                <a href="">
+                <button class="recap" type="button">
                     <div class="step">3</div>
                     <p>Vos coordonnées</p>
-                </a>
+                </button>
             </nav>
 
             <div class="form-recap">
                 <section class="create">
                     <form name="reservation" method="post">
-                        <section class="date-hours" id="date-horaire">
+                        <section class="active date-hours" id="date-horaire">
                             <h2>Dates <span class="alternative-font">& horaires</span></h2>
                             <fieldset class="date">
                                 <legend>
@@ -1562,7 +1562,6 @@
 																required="required"></div>
 
 														<!-- AJOUT DE CETTE DIV POUR ASSOCIER SUR UNE LIGNE NOM -->
-														<div class="name-last-name">
 														<div><label
 																for="reservation_tickets___name___user___name___lastName000"
 																class="required">Last name</label><input type="text"
@@ -1575,7 +1574,7 @@
 																id="reservation_tickets___name___user___name___firstName000"
 																name="reservation[tickets][__name__][user][__name__][firstName]"
 																required="required"></div>
-														</div>
+												
 													</div>
 												</div>
 											</div>
@@ -1690,6 +1689,7 @@
 									</div>
 								</fieldset>
                                 </div>
+								<button class="btn-next" type="button" data-action="categories">Valider</button>
                         </section>
 
                         <section class="sumarry" id="resume"></section>
