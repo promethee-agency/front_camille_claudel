@@ -1519,165 +1519,177 @@
 
                         <section class="categories" id="categories">
                             <h2>Nombre <span class="alternative-font">de billets</span></h2>
+                            <h3>Vous pouvez achter 5 billets</h3>
                            
-                            <fieldset data-category="1">
-                                <!-- AJOUTE DE CETTE DIV PRICE ENTOURANT LEGEND ET CONTROLS -->
-                                <div class="price">
-                                    <legend>
-                                        <h4>Gratuit -18 ans</h4>
-                                        <p>0€</p>
-                                    </legend>
-                                    <div class="controls">
-                                        <button type="button" data-action="remove" class="remove">-</button>
-                                        <input type="number" id="counter_1" value="0" readonly="">
-                                        <button type="button" data-action="add" class="add">+</button>
-                                    </div>
+                            <!-- ATTENTION AJOUT D'UNE DIV QUI ENGLOBE TOUS MES FIELDSET DE CATEGORY EN DEHORS DU H2 ET H3 -->
+                            <div class="container">
+								<fieldset data-category="1">
+									<!-- AJOUTE DE CETTE DIV PRICE ENTOURANT LEGEND ET CONTROLS -->
+									<div class="price">
+										<legend>
+											<p>Gratuit -18 ans</p>
+											<p>0€</p>
+										</legend>
+										<div class="controls">
+											<button type="button" data-action="remove" class="remove">-</button>
+											<input type="number" id="counter_1" value="0" readonly="">
+											<button type="button" data-action="add" class="add">+</button>
+										</div>
+									</div>
+									<div class="tickets">
+										<div>
+											<div id="reservation_tickets___name__">
+												<div>
+													<div id="reservation_tickets___name___user"
+														data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
+													</div>
+												</div>
+												<div><select id="reservation_tickets___name___category"
+														name="reservation[tickets][__name__][category]"
+														style="display: none;">
+														<option value=""></option>
+														<option value="1">minus18</option>
+														<option value="2">student</option>
+														<option value="3">full</option>
+													</select></div>
+												<div>
+													<div id="reservation_tickets___name___user___name__000">
+														<div><label
+																for="reservation_tickets___name___user___name___email000"
+																class="required">Email</label><input type="email"
+																id="reservation_tickets___name___user___name___email000"
+																name="reservation[tickets][__name__][user][__name__][email]"
+																required="required"></div>
+
+														<!-- AJOUT DE CETTE DIV POUR ASSOCIER SUR UNE LIGNE NOM -->
+														<div class="name-last-name">
+														<div><label
+																for="reservation_tickets___name___user___name___lastName000"
+																class="required">Last name</label><input type="text"
+																id="reservation_tickets___name___user___name___lastName000"
+																name="reservation[tickets][__name__][user][__name__][lastName]"
+																required="required"></div>
+														<div><label
+																for="reservation_tickets___name___user___name___firstName000"
+																class="required">First name</label><input type="text"
+																id="reservation_tickets___name___user___name___firstName000"
+																name="reservation[tickets][__name__][user][__name__][firstName]"
+																required="required"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div>
+											<div id="reservation_tickets___name__">
+												<div>
+													<div id="reservation_tickets___name___user"
+														data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
+													</div>
+												</div>
+												<div><select id="reservation_tickets___name___category"
+														name="reservation[tickets][__name__][category]"
+														style="display: none;">
+														<option value=""></option>
+														<option value="1">minus18</option>
+														<option value="2">student</option>
+														<option value="3">full</option>
+													</select></div>
+												<div>
+													<div id="reservation_tickets___name___user___name__001">
+														<div><label
+																for="reservation_tickets___name___user___name___email001"
+																class="required">Email</label><input type="email"
+																id="reservation_tickets___name___user___name___email001"
+																name="reservation[tickets][__name__][user][__name__][email]"
+																required="required"></div>
+														<div><label
+																for="reservation_tickets___name___user___name___lastName001"
+																class="required">Last name</label><input type="text"
+																id="reservation_tickets___name___user___name___lastName001"
+																name="reservation[tickets][__name__][user][__name__][lastName]"
+																required="required"></div>
+														<div><label
+																for="reservation_tickets___name___user___name___firstName001"
+																class="required">First name</label><input type="text"
+																id="reservation_tickets___name___user___name___firstName001"
+																name="reservation[tickets][__name__][user][__name__][firstName]"
+																required="required"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<fieldset data-category="2">
+									<div class="price">
+										<legend>
+											<p>Tarif étudiant</p>
+											<p>6€</p>
+										</legend>
+										<div class="controls">
+											<button type="button" data-action="remove" class="remove">-</button>
+											<input type="number" id="counter_2" value="0" readonly="">
+											<button type="button" data-action="add" class="add">+</button>
+										</div>
+									</div>
+									<div class="tickets"></div>
+								</fieldset>
+								<fieldset data-category="3">
+									<div class="price">
+										<legend>
+											<p>Plein tarif</p>
+											<p>10€</p>
+										</legend>
+										<div class="controls">
+											<button type="button" data-action="remove" class="remove">-</button>
+											<input type="number" id="counter_3" value="0" readonly="">
+											<button type="button" data-action="add" class="add">+</button>
+										</div>
+									</div>
+									<div class="tickets">
+										<div>
+											<div id="reservation_tickets___name__">
+												<div>
+													<div id="reservation_tickets___name___user"
+														data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
+													</div>
+												</div>
+												<div><select id="reservation_tickets___name___category"
+														name="reservation[tickets][__name__][category]"
+														style="display: none;">
+														<option value=""></option>
+														<option value="1">minus18</option>
+														<option value="2">student</option>
+														<option value="3">full</option>
+													</select></div>
+												<div>
+													<div id="reservation_tickets___name___user___name__002">
+														<div><label
+																for="reservation_tickets___name___user___name___email002"
+																class="required">Email</label><input type="email"
+																id="reservation_tickets___name___user___name___email002"
+																name="reservation[tickets][__name__][user][__name__][email]"
+																required="required"></div>
+														<div><label
+																for="reservation_tickets___name___user___name___lastName002"
+																class="required">Last name</label><input type="text"
+																id="reservation_tickets___name___user___name___lastName002"
+																name="reservation[tickets][__name__][user][__name__][lastName]"
+																required="required"></div>
+														<div><label
+																for="reservation_tickets___name___user___name___firstName002"
+																class="required">First name</label><input type="text"
+																id="reservation_tickets___name___user___name___firstName002"
+																name="reservation[tickets][__name__][user][__name__][firstName]"
+																required="required"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
                                 </div>
-                                <div class="tickets">
-                                    <div>
-                                        <div id="reservation_tickets___name__">
-                                            <div>
-                                                <div id="reservation_tickets___name___user"
-                                                    data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
-                                                </div>
-                                            </div>
-                                            <div><select id="reservation_tickets___name___category"
-                                                    name="reservation[tickets][__name__][category]"
-                                                    style="display: none;">
-                                                    <option value=""></option>
-                                                    <option value="1">minus18</option>
-                                                    <option value="2">student</option>
-                                                    <option value="3">full</option>
-                                                </select></div>
-                                            <div>
-                                                <div id="reservation_tickets___name___user___name__000">
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___email000"
-                                                            class="required">Email</label><input type="email"
-                                                            id="reservation_tickets___name___user___name___email000"
-                                                            name="reservation[tickets][__name__][user][__name__][email]"
-                                                            required="required"></div>
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___lastName000"
-                                                            class="required">Last name</label><input type="text"
-                                                            id="reservation_tickets___name___user___name___lastName000"
-                                                            name="reservation[tickets][__name__][user][__name__][lastName]"
-                                                            required="required"></div>
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___firstName000"
-                                                            class="required">First name</label><input type="text"
-                                                            id="reservation_tickets___name___user___name___firstName000"
-                                                            name="reservation[tickets][__name__][user][__name__][firstName]"
-                                                            required="required"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div id="reservation_tickets___name__">
-                                            <div>
-                                                <div id="reservation_tickets___name___user"
-                                                    data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
-                                                </div>
-                                            </div>
-                                            <div><select id="reservation_tickets___name___category"
-                                                    name="reservation[tickets][__name__][category]"
-                                                    style="display: none;">
-                                                    <option value=""></option>
-                                                    <option value="1">minus18</option>
-                                                    <option value="2">student</option>
-                                                    <option value="3">full</option>
-                                                </select></div>
-                                            <div>
-                                                <div id="reservation_tickets___name___user___name__001">
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___email001"
-                                                            class="required">Email</label><input type="email"
-                                                            id="reservation_tickets___name___user___name___email001"
-                                                            name="reservation[tickets][__name__][user][__name__][email]"
-                                                            required="required"></div>
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___lastName001"
-                                                            class="required">Last name</label><input type="text"
-                                                            id="reservation_tickets___name___user___name___lastName001"
-                                                            name="reservation[tickets][__name__][user][__name__][lastName]"
-                                                            required="required"></div>
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___firstName001"
-                                                            class="required">First name</label><input type="text"
-                                                            id="reservation_tickets___name___user___name___firstName001"
-                                                            name="reservation[tickets][__name__][user][__name__][firstName]"
-                                                            required="required"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset data-category="2">
-                                <legend>
-                                    <h4>Tarif étudiant</h4>
-                                    <p>6€</p>
-                                </legend>
-                                <div class="controls">
-                                    <button type="button" data-action="remove" class="remove">-</button>
-                                    <input type="number" id="counter_2" value="0" readonly="">
-                                    <button type="button" data-action="add" class="add">+</button>
-                                </div>
-                                <div class="tickets"></div>
-                            </fieldset>
-                            <fieldset data-category="3">
-                                <legend>
-                                    <h4>Plein tarif</h4>
-                                    <p>10€</p>
-                                </legend>
-                                <div class="controls">
-                                    <button type="button" data-action="remove" class="remove">-</button>
-                                    <input type="number" id="counter_3" value="0" readonly="">
-                                    <button type="button" data-action="add" class="add">+</button>
-                                </div>
-                                <div class="tickets">
-                                    <div>
-                                        <div id="reservation_tickets___name__">
-                                            <div>
-                                                <div id="reservation_tickets___name___user"
-                                                    data-prototype="<div><div id=&quot;reservation_tickets___name___user___name__&quot;><div><label for=&quot;reservation_tickets___name___user___name___email&quot; class=&quot;required&quot;>Email</label><input type=&quot;email&quot; id=&quot;reservation_tickets___name___user___name___email&quot; name=&quot;reservation[tickets][__name__][user][__name__][email]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___lastName&quot; class=&quot;required&quot;>Last name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___lastName&quot; name=&quot;reservation[tickets][__name__][user][__name__][lastName]&quot; required=&quot;required&quot; /></div><div><label for=&quot;reservation_tickets___name___user___name___firstName&quot; class=&quot;required&quot;>First name</label><input type=&quot;text&quot; id=&quot;reservation_tickets___name___user___name___firstName&quot; name=&quot;reservation[tickets][__name__][user][__name__][firstName]&quot; required=&quot;required&quot; /></div></div></div>">
-                                                </div>
-                                            </div>
-                                            <div><select id="reservation_tickets___name___category"
-                                                    name="reservation[tickets][__name__][category]"
-                                                    style="display: none;">
-                                                    <option value=""></option>
-                                                    <option value="1">minus18</option>
-                                                    <option value="2">student</option>
-                                                    <option value="3">full</option>
-                                                </select></div>
-                                            <div>
-                                                <div id="reservation_tickets___name___user___name__002">
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___email002"
-                                                            class="required">Email</label><input type="email"
-                                                            id="reservation_tickets___name___user___name___email002"
-                                                            name="reservation[tickets][__name__][user][__name__][email]"
-                                                            required="required"></div>
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___lastName002"
-                                                            class="required">Last name</label><input type="text"
-                                                            id="reservation_tickets___name___user___name___lastName002"
-                                                            name="reservation[tickets][__name__][user][__name__][lastName]"
-                                                            required="required"></div>
-                                                    <div><label
-                                                            for="reservation_tickets___name___user___name___firstName002"
-                                                            class="required">First name</label><input type="text"
-                                                            id="reservation_tickets___name___user___name___firstName002"
-                                                            name="reservation[tickets][__name__][user][__name__][firstName]"
-                                                            required="required"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
                         </section>
 
                         <section class="sumarry" id="resume"></section>
@@ -1795,6 +1807,7 @@
     </div>
 
     <script src="assets/scripts/store/calendar.js"></script>
+	<script src="assets/scripts/store/reservation_steps.js"></script>
 </body>
 
 </html>

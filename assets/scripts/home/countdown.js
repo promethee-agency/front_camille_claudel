@@ -38,7 +38,7 @@ class CountdownTimer {
         // Automne -> Hiver
         return new Date(nextSeasonYear, 11, 21);
       }
-    }  
+    }
   
     updateCountdown() {
       const currentTime = new Date();

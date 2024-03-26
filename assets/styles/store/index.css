@@ -71,7 +71,11 @@ section.create {
     width: 100%;
 }
 
-section.create legend h3{
+section.create form {
+    display: flex;
+}
+
+section.create h3{
     font-size: var(--text-lg);
     margin: 1rem 0rem;
 }
@@ -84,6 +88,10 @@ section.create h2 {
 section.create h2 span.alternative-font {
     font-family: 'Mazius';
     font-style: italic;
+}
+
+section.create .date-hours .date {
+    width: 30rem;
 }
 
 section.create .date-hours .date #calendar table caption {
@@ -212,13 +220,101 @@ section.create button.btn-next {
     margin-left: auto;
 }
 
-/* section.create form {
-    display: flex;
-} */
+section.create section.categories {
+    display: none;
+}
+
+section.create section.sumarry {
+    display: none;
+}
+
+/* J'AI UN PROBLEME AVEC MON BOUTON SUBMIT */
+section.create button[type="submit"] {
+    display: none;
+}
 
 /* section.create section.date-hours {
     display: none;
 } */
+
+section.categories .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 30rem;
+}
+
+section.categories .price {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: solid 1px var(--primary-950);
+    padding: 1rem 1rem;
+}
+
+section.categories .price legend {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 3rem;
+}
+
+section.categories .price .controls {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: var(--text-lg);
+    padding-left: 1rem;
+}
+
+section.categories .price .controls input {
+    background-color: #D9D9D9;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    width: 3.5rem;
+    text-align: center;
+}
+
+section.categories .price .controls button {
+    background-color: transparent;
+    color: var(--primary-950);
+    border: none;
+    font-weight: bold;
+}
+
+section.categories .container .tickets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: solid 1px var(--primary-950);
+    border-top: none;
+    padding: 1rem;
+}
+
+section.categories .container .tickets div {
+    display: flex;
+    flex-direction: column;
+}
+
+section.categories .container .tickets div label {
+    padding-bottom: 0.2rem;
+}
+
+section.categories .container .tickets div input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: solid 0.5px var(--primary-950);
+    background-color: transparent;
+}
+
+
+/* section.categories .container div:not:last-of-type {
+    border-bottom: solid 1px var(--primary-600);
+    padding-bottom: 0.5rem;
+} */
+
+
+
 
 
 /* RECAP TICKET */
@@ -314,12 +410,29 @@ section.create button.btn-next {
     font-weight: 500;
 }
 
+
+
 /* MEDIAS QUERIES */
+/* above 640px */
+@media (min-width: 40rem) {
+    section.categories .price legend {
+        gap: 3rem;
+    }
+
+    section.categories .price legend {
+        gap: 5rem;
+    }
+
+    section.categories .price legend p:last-child {
+        padding-left: 3rem;
+    }
+}
+
 /* above 768px */
 @media (min-width: 48rem) {
-    section.create {
+    /* section.create {
         width: 50%;
-    }
+    } */
 }
 
 /* above 1024px */
